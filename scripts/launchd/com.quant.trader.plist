@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.quant.trader</string>
+  <!-- caffeinate -i: prevent idle system sleep while the trader runs (display may sleep). -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/caffeinate</string>
+    <string>-i</string>
+    <string>__BACKEND__/.venv/bin/python</string>
+    <string>-m</string>
+    <string>app.main_trader</string>
+  </array>
+  <key>WorkingDirectory</key><string>__BACKEND__</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <!-- rendered by scripts/launchd_install.sh from $TRADING_MODE (default PAPER); LIVE only via
+         scripts/live_transition.sh after the explicit user approval (LIVE_APPROVE_D0). -->
+    <key>TRADING_MODE</key><string>__TRADING_MODE__</string>
+    <key>PYTHONUNBUFFERED</key><string>1</string>
+    <key>PATH</key><string>/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin</string>
+  </dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>10</integer>
+  <key>ExitTimeOut</key><integer>30</integer>
+  <key>StandardOutPath</key><string>__ROOT__/logs/launchd_trader.out.log</string>
+  <key>StandardErrorPath</key><string>__ROOT__/logs/launchd_trader.err.log</string>
+  <key>ProcessType</key><string>Interactive</string>
+</dict>
+</plist>

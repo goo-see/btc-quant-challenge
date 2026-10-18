@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.quant.api</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>__BACKEND__/.venv/bin/python</string>
+    <string>-m</string>
+    <string>app.main_api</string>
+  </array>
+  <key>WorkingDirectory</key><string>__BACKEND__</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PYTHONUNBUFFERED</key><string>1</string>
+    <key>PATH</key><string>/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin</string>
+  </dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>5</integer>
+  <key>StandardOutPath</key><string>__ROOT__/logs/launchd_api.out.log</string>
+  <key>StandardErrorPath</key><string>__ROOT__/logs/launchd_api.err.log</string>
+</dict>
+</plist>

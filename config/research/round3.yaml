@@ -1,0 +1,60 @@
+# Research Round 3 — BTC Trend Following: Timeframe & Breakout Horizon Study.
+# Pre-registered on 2026-09-27 00:00 KST BEFORE any Round 3 backtest was run. Fixed parameters —
+# no optimisation in this round. D0 is the CONTROL and is never modified by this experiment.
+experiment_id: round3_tf_horizon_20260927
+title: "Research Round 3 — BTC Trend Following Timeframe & Breakout Horizon Study"
+control: D0
+market: KRW-BTC
+started_at: "2026-09-26T15:00:00+00:00"       # 2026-09-27 00:00 KST — shadow bars at/after this are live
+final_report_after: "2026-09-29T23:00:00+09:00"
+market_db: ../data/quant.db                   # READ-ONLY (sqlite ?mode=ro)
+research_db: ../data/research_round3.db       # the only file this experiment writes
+log_file: ../logs/shadow_round3.log
+poll_seconds: 60
+warmup_days: 400                              # 1h history replayed before started_at (1d EMA100 + channels)
+initial_virtual_equity: 100000
+
+# Controlled variables (identical for D0..D6) — same keys as the frozen D0 parameter file so the
+# D0 replica hashes to the frozen D0 parameter_hash.
+common_params:
+  trend_ema: 100
+  atr_stop_mult: 3.0
+  atr_trail_mult: 4.0
+  exit_on_trend_loss: 1
+  rsi_period: 14          # computed but unused
+  volume_sma_period: 20   # computed but unused
+  ema_fast: 20            # computed but unused
+  ema_slow: 50            # computed but unused
+trend_timeframe: 1d
+
+strategies:
+  D0: {hypothesis: CONTROL, timeframe: 4h, horizon_days: 5, entry_n: 30,  exit_n: 20, atr_period: 14, strategy_version: trend_following_4h_v1}
+  D1: {hypothesis: H1, timeframe: 2h, horizon_days: 5, entry_n: 60,  exit_n: 40, atr_period: 28, strategy_version: trend_following_2h_r3_h5}
+  D2: {hypothesis: H2, timeframe: 1h, horizon_days: 5, entry_n: 120, exit_n: 80, atr_period: 56, strategy_version: trend_following_1h_r3_h5}
+  D3: {hypothesis: H3, timeframe: 2h, horizon_days: 3, entry_n: 36,  exit_n: 24, atr_period: 28, strategy_version: trend_following_2h_r3_h3}
+  D4: {hypothesis: H4, timeframe: 1h, horizon_days: 3, entry_n: 72,  exit_n: 48, atr_period: 56, strategy_version: trend_following_1h_r3_h3}
+  D5: {hypothesis: H5, timeframe: 2h, horizon_days: 2, entry_n: 24,  exit_n: 16, atr_period: 28, strategy_version: trend_following_2h_r3_h2}
+  D6: {hypothesis: H6, timeframe: 1h, horizon_days: 2, entry_n: 48,  exit_n: 32, atr_period: 56, strategy_version: trend_following_1h_r3_h2}
+
+historical:
+  start: "2017-09-25T00:00:00+00:00"
+  end: "2026-09-25T14:00:00+00:00"            # exclusive on open_time; same last bar as the frozen 9Y D0 run
+  train_days: 540
+  test_days: 180
+  roll_days: 180
+  warmup_days: 240
+  cost_multipliers: [1.0, 1.5, 2.0]
+  recent_2y_start: "2024-09-25T00:00:00+00:00"
+  ytd_start: "2026-01-01T00:00:00+00:00"
+  fake_breakout_max_hours: 48                 # losing trade closed within 48h of entry (informational)
+
+# Pre-registered promotion gate (next-round candidate status only — never a PAPER/LIVE promotion)
+gate:
+  min_oos_return_pct: 0.0
+  min_oos_profit_factor: 1.2
+  max_oos_mdd_pct: 10.0
+  min_profitable_window_ratio: 0.60
+  min_oos_trades: 50            # fewer -> REVIEW at best, never PASS
+  review_min_trades: 30         # below this -> REJECT (insufficient evidence)
+  cost_stress_positive: [1.5, 2.0]  # OOS return must stay > 0 at 1.5x; 2.0x <= 0 -> REVIEW flag
+  recent_2y_min_return_pct: 0.0     # <= 0 -> "collapsed" -> REVIEW flag

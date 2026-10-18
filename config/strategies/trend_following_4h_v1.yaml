@@ -1,0 +1,23 @@
+# Frozen operating parameter set for Strategy D — trend_following_4h.
+# Source: research round 2 walk-forward (15 windows, 2019-03 .. 2026-08, docs/research/round2_D.json).
+# Selection rule: per-dimension mode/median of the 15 WF selections (NOT the last window, NOT a
+# full-sample re-optimisation), cross-checked with neighbourhood stability (99% of neighbours
+# positive-expectancy, 0 cliffs) and OOS expectancy per value. Never changed automatically.
+strategy_version: trend_following_4h_v1
+strategy: trend_following_4h
+timeframe: 4h
+trend_timeframe: 1d
+params:
+  entry_n: 30            # WF freq {20:2, 30:10, 42:3}; mode=median=30; avg OOS +8.6% (83 trades)
+  trend_ema: 100         # WF freq {50:6, 100:9}; mode=median=100; (50 had higher avg OOS +10.8% but only in 2019-21 + last window)
+  exit_n: 20             # WF freq {10:7, 20:8}; mode=median=20 (near tie; 20 = fewer whipsaw exits)
+  atr_period: 14         # fixed in research
+  atr_stop_mult: 3.0     # WF freq {2.0:7, 3.0:8}; mode=median=3.0 (2.0 avg OOS +9.2% vs 3.0 +6.9%, both stable)
+  atr_trail_mult: 4.0    # fixed in research
+  exit_on_trend_loss: 1  # fixed in research
+  rsi_period: 14         # computed but unused by this strategy
+  volume_sma_period: 20  # computed but unused by this strategy
+  ema_fast: 20           # computed but unused by this strategy
+  ema_slow: 50           # computed but unused by this strategy
+frozen_at: "2026-09-25"
+research_report: docs/round2-report.md

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.quant.eth-grid</string>
+  <!-- ETH grid LIVE EXPERIMENT (₩50,000 sleeve, research candidate G0). Separate process from the
+       BTC trader: own DB data/eth_grid_live.db; real orders ONLY via OrderManager -> LiveGateway(KRW-ETH).
+       Installed with TRADING_MODE=LIVE by scripts/launchd_install.sh after the user's explicit approval. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/caffeinate</string>
+    <string>-i</string>
+    <string>__BACKEND__/.venv/bin/python</string>
+    <string>-m</string>
+    <string>app.main_eth_grid</string>
+  </array>
+  <key>WorkingDirectory</key><string>__BACKEND__</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>TRADING_MODE</key><string>__TRADING_MODE__</string>
+    <key>PYTHONUNBUFFERED</key><string>1</string>
+    <key>PATH</key><string>/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin</string>
+  </dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>10</integer>
+  <key>ExitTimeOut</key><integer>30</integer>
+  <key>StandardOutPath</key><string>__ROOT__/logs/launchd_eth_grid.out.log</string>
+  <key>StandardErrorPath</key><string>__ROOT__/logs/launchd_eth_grid.err.log</string>
+  <key>ProcessType</key><string>Interactive</string>
+</dict>
+</plist>

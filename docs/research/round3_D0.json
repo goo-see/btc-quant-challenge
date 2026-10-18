@@ -1,0 +1,1497 @@
+{
+  "strategy": {
+    "strategy_id": "D0",
+    "hypothesis_id": "CONTROL",
+    "strategy_version": "trend_following_4h_v1",
+    "timeframe": "4h",
+    "trend_timeframe": "1d",
+    "horizon_days": 5,
+    "params": {
+      "trend_ema": 100.0,
+      "atr_stop_mult": 3.0,
+      "atr_trail_mult": 4.0,
+      "exit_on_trend_loss": 1.0,
+      "rsi_period": 14.0,
+      "volume_sma_period": 20.0,
+      "ema_fast": 20.0,
+      "ema_slow": 50.0,
+      "entry_n": 30.0,
+      "exit_n": 20.0,
+      "atr_period": 14.0
+    },
+    "parameter_hash": "c0e59de4f7b70c0c"
+  },
+  "dataset": {
+    "first": "2017-09-25T03:00:00+00:00",
+    "last": "2026-09-25T13:00:00+00:00",
+    "bars_1h": 78766
+  },
+  "wf_setup": {
+    "train_days": 540,
+    "test_days": 180,
+    "roll_days": 180,
+    "warmup_days": 240,
+    "windows": 15,
+    "fixed_params": true
+  },
+  "oos": {
+    "net_return_pct": 226.30800120775734,
+    "max_drawdown_pct": 7.226229980033394,
+    "profit_factor": 4.060474897618346,
+    "trades": 105,
+    "wins": 47,
+    "losses": 58,
+    "win_rate": 0.44761904761904764,
+    "expectancy": 1171.584476190476,
+    "exposure_pct": 23.455728006760996,
+    "fees": 3253.64,
+    "profitable_windows": 13,
+    "losing_windows": 2,
+    "windows": 15,
+    "buy_hold_return_pct": 2602.760590195145,
+    "buy_hold_mdd_pct": 87.4859943977591,
+    "best_window": {
+      "train_start": "2019-03-19T03:00:00+00:00",
+      "train_end": "2020-09-09T03:00:00+00:00",
+      "test_end": "2021-03-08T03:00:00+00:00",
+      "test_return_pct": 37.21813,
+      "test_mdd_pct": 6.756268430853559,
+      "test_trades": 11,
+      "test_bh_return_pct": 384.89352818371606
+    },
+    "worst_window": {
+      "train_start": "2018-03-24T03:00:00+00:00",
+      "train_end": "2019-09-15T03:00:00+00:00",
+      "test_end": "2020-03-13T03:00:00+00:00",
+      "test_return_pct": -2.35947,
+      "test_mdd_pct": 3.2100599927834192,
+      "test_trades": 6,
+      "test_bh_return_pct": -47.727458848579154
+    }
+  },
+  "windows": [
+    {
+      "train_start": "2017-09-25T03:00:00+00:00",
+      "train_end": "2019-03-19T03:00:00+00:00",
+      "test_end": "2019-09-15T03:00:00+00:00",
+      "test_return_pct": 33.84551,
+      "test_mdd_pct": 5.050634423843781,
+      "test_trades": 11,
+      "test_bh_return_pct": 173.54390681003588
+    },
+    {
+      "train_start": "2018-03-24T03:00:00+00:00",
+      "train_end": "2019-09-15T03:00:00+00:00",
+      "test_end": "2020-03-13T03:00:00+00:00",
+      "test_return_pct": -2.35947,
+      "test_mdd_pct": 3.2100599927834192,
+      "test_trades": 6,
+      "test_bh_return_pct": -47.727458848579154
+    },
+    {
+      "train_start": "2018-09-20T03:00:00+00:00",
+      "train_end": "2020-03-13T03:00:00+00:00",
+      "test_end": "2020-09-09T03:00:00+00:00",
+      "test_return_pct": 6.12288,
+      "test_mdd_pct": 4.108554988935103,
+      "test_trades": 10,
+      "test_bh_return_pct": 87.35524256651017
+    },
+    {
+      "train_start": "2019-03-19T03:00:00+00:00",
+      "train_end": "2020-09-09T03:00:00+00:00",
+      "test_end": "2021-03-08T03:00:00+00:00",
+      "test_return_pct": 37.21813,
+      "test_mdd_pct": 6.756268430853559,
+      "test_trades": 11,
+      "test_bh_return_pct": 384.89352818371606
+    },
+    {
+      "train_start": "2019-09-15T03:00:00+00:00",
+      "train_end": "2021-03-08T03:00:00+00:00",
+      "test_end": "2021-09-04T03:00:00+00:00",
+      "test_return_pct": 1.1011,
+      "test_mdd_pct": 7.226229980033394,
+      "test_trades": 8,
+      "test_bh_return_pct": -0.1188302965590915
+    },
+    {
+      "train_start": "2020-03-13T03:00:00+00:00",
+      "train_end": "2021-09-04T03:00:00+00:00",
+      "test_end": "2022-03-03T03:00:00+00:00",
+      "test_return_pct": 6.6667,
+      "test_mdd_pct": 2.364128636004218,
+      "test_trades": 5,
+      "test_bh_return_pct": -8.131455075262517
+    },
+    {
+      "train_start": "2020-09-09T03:00:00+00:00",
+      "train_end": "2022-03-03T03:00:00+00:00",
+      "test_end": "2022-08-30T03:00:00+00:00",
+      "test_return_pct": 0.95481,
+      "test_mdd_pct": 1.0337858204819448,
+      "test_trades": 1,
+      "test_bh_return_pct": -47.85416588442909
+    },
+    {
+      "train_start": "2021-03-08T03:00:00+00:00",
+      "train_end": "2022-08-30T03:00:00+00:00",
+      "test_end": "2023-02-26T03:00:00+00:00",
+      "test_return_pct": 3.5784,
+      "test_mdd_pct": 1.5751170298298138,
+      "test_trades": 3,
+      "test_bh_return_pct": 11.29072907290729
+    },
+    {
+      "train_start": "2021-09-04T03:00:00+00:00",
+      "train_end": "2023-02-26T03:00:00+00:00",
+      "test_end": "2023-08-25T03:00:00+00:00",
+      "test_return_pct": 8.06407,
+      "test_mdd_pct": 2.073875147232038,
+      "test_trades": 7,
+      "test_bh_return_pct": 14.817570190192786
+    },
+    {
+      "train_start": "2022-03-03T03:00:00+00:00",
+      "train_end": "2023-08-25T03:00:00+00:00",
+      "test_end": "2024-02-21T03:00:00+00:00",
+      "test_return_pct": 12.12995,
+      "test_mdd_pct": 2.9455659099487823,
+      "test_trades": 10,
+      "test_bh_return_pct": 103.54677860100851
+    },
+    {
+      "train_start": "2022-08-30T03:00:00+00:00",
+      "train_end": "2024-02-21T03:00:00+00:00",
+      "test_end": "2024-08-19T03:00:00+00:00",
+      "test_return_pct": 5.62463,
+      "test_mdd_pct": 4.481667200892573,
+      "test_trades": 10,
+      "test_bh_return_pct": 12.758124342578746
+    },
+    {
+      "train_start": "2023-02-26T03:00:00+00:00",
+      "train_end": "2024-08-19T03:00:00+00:00",
+      "test_end": "2025-02-15T03:00:00+00:00",
+      "test_return_pct": 11.37734,
+      "test_mdd_pct": 3.663503753303483,
+      "test_trades": 11,
+      "test_bh_return_pct": 80.8962698383474
+    },
+    {
+      "train_start": "2023-08-25T03:00:00+00:00",
+      "train_end": "2025-02-15T03:00:00+00:00",
+      "test_end": "2025-08-14T03:00:00+00:00",
+      "test_return_pct": 4.82932,
+      "test_mdd_pct": 1.9880525265760385,
+      "test_trades": 7,
+      "test_bh_return_pct": 14.331854143766364
+    },
+    {
+      "train_start": "2024-02-21T03:00:00+00:00",
+      "train_end": "2025-08-14T03:00:00+00:00",
+      "test_end": "2026-02-10T03:00:00+00:00",
+      "test_return_pct": 2.14988,
+      "test_mdd_pct": 1.4381650398879202,
+      "test_trades": 3,
+      "test_bh_return_pct": -38.535861598267005
+    },
+    {
+      "train_start": "2024-08-19T03:00:00+00:00",
+      "train_end": "2026-02-10T03:00:00+00:00",
+      "test_end": "2026-08-09T03:00:00+00:00",
+      "test_return_pct": -0.38914,
+      "test_mdd_pct": 1.2298201158636497,
+      "test_trades": 2,
+      "test_bh_return_pct": -11.953110666937029
+    }
+  ],
+  "cost_stress": {
+    "1.0x": {
+      "oos_return_pct": 226.30800120775734,
+      "oos_pf": 4.060474897618346,
+      "oos_mdd_pct": 7.226229980033394,
+      "trades": 105,
+      "fees": 3253.64
+    },
+    "1.5x": {
+      "oos_return_pct": 218.67853919612725,
+      "oos_pf": 3.8977475621811055,
+      "oos_mdd_pct": 7.327097543990119,
+      "trades": 105,
+      "fees": 4879.260000000001
+    },
+    "2.0x": {
+      "oos_return_pct": 211.21738245910248,
+      "oos_pf": 3.745450338811621,
+      "oos_mdd_pct": 7.428030020032196,
+      "trades": 105,
+      "fees": 6504.210000000001
+    }
+  },
+  "concentration": {
+    "trades": 105,
+    "total_net_pnl": 123016.37,
+    "largest_win": 20199.04,
+    "median_pnl": -121.23,
+    "top1_contribution": 0.16419798438207858,
+    "top3_contribution": 0.41081410547230424,
+    "top5_contribution": 0.5763160626508488,
+    "return_pct_ex_top1": 102.81733,
+    "return_pct_ex_top3": 72.47950999999999,
+    "return_pct_ex_top5": 52.12006,
+    "concentration_risk": false,
+    "detail": ""
+  },
+  "full_period": {
+    "available": true,
+    "start": "2017-09-25T03:00:00+00:00",
+    "end": "2026-09-25T14:00:00+00:00",
+    "net_return_pct": 129.51961,
+    "max_drawdown_pct": 11.284215481812073,
+    "profit_factor": 3.746372305207757,
+    "trades": 116,
+    "win_rate": 0.4482758620689655,
+    "expectancy": 1102.1544827586206,
+    "exposure_pct": 20.573920097343336,
+    "fees": 3553.04,
+    "buy_hold_return_pct": 2603.4039514401334,
+    "max_consecutive_losses": 4,
+    "trades_list": [
+      {
+        "entry_time": "2018-01-04T21:00:00+00:00",
+        "exit_time": "2018-01-09T09:00:00+00:00",
+        "net_pnl": 1264.29,
+        "return_pct": 4.214329500306502,
+        "holding_minutes": 6480,
+        "exit_reason": "STOP@23333943 (STOP)"
+      },
+      {
+        "entry_time": "2018-02-20T05:00:00+00:00",
+        "exit_time": "2018-02-21T21:00:00+00:00",
+        "net_pnl": -1274.56,
+        "return_pct": -4.248551743724223,
+        "holding_minutes": 2400,
+        "exit_reason": "STOP@12546538 (STOP)"
+      },
+      {
+        "entry_time": "2018-03-04T01:00:00+00:00",
+        "exit_time": "2018-03-06T18:00:00+00:00",
+        "net_pnl": -1460.64,
+        "return_pct": -4.869306407866418,
+        "holding_minutes": 3900,
+        "exit_reason": "STOP@12107924 (STOP)"
+      },
+      {
+        "entry_time": "2018-04-25T01:00:00+00:00",
+        "exit_time": "2018-04-25T10:00:00+00:00",
+        "net_pnl": -1731.33,
+        "return_pct": -5.857204815592419,
+        "holding_minutes": 540,
+        "exit_reason": "STOP@9870953 (STOP)"
+      },
+      {
+        "entry_time": "2018-05-04T01:00:00+00:00",
+        "exit_time": "2018-05-08T11:00:00+00:00",
+        "net_pnl": -874.52,
+        "return_pct": -3.011539321126059,
+        "holding_minutes": 6360,
+        "exit_reason": "STOP@10277000 (STOP)"
+      },
+      {
+        "entry_time": "2018-07-23T09:00:00+00:00",
+        "exit_time": "2018-07-26T22:00:00+00:00",
+        "net_pnl": 750.13,
+        "return_pct": 2.606700700802968,
+        "holding_minutes": 5100,
+        "exit_reason": "STOP@8924524 (STOP)"
+      },
+      {
+        "entry_time": "2018-09-04T09:00:00+00:00",
+        "exit_time": "2018-09-05T09:00:00+00:00",
+        "net_pnl": -455.47,
+        "return_pct": -1.5704811471232614,
+        "holding_minutes": 1440,
+        "exit_reason": "STOP@8063506 (STOP)"
+      },
+      {
+        "entry_time": "2019-03-21T01:00:00+00:00",
+        "exit_time": "2019-03-21T14:00:00+00:00",
+        "net_pnl": -853.3,
+        "return_pct": -2.956176322943469,
+        "holding_minutes": 780,
+        "exit_reason": "STOP@4428463 (STOP)"
+      },
+      {
+        "entry_time": "2019-03-29T13:00:00+00:00",
+        "exit_time": "2019-03-30T04:00:00+00:00",
+        "net_pnl": -523.83,
+        "return_pct": -1.8309978786388474,
+        "holding_minutes": 900,
+        "exit_reason": "STOP@4561395 (STOP)"
+      },
+      {
+        "entry_time": "2019-04-01T05:00:00+00:00",
+        "exit_time": "2019-04-11T10:00:00+00:00",
+        "net_pnl": 7096.16,
+        "return_pct": 24.94083889445968,
+        "holding_minutes": 14700,
+        "exit_reason": "STOP@5873530 (STOP)"
+      },
+      {
+        "entry_time": "2019-04-19T21:00:00+00:00",
+        "exit_time": "2019-04-25T22:00:00+00:00",
+        "net_pnl": 953.85,
+        "return_pct": 3.1795010598336866,
+        "holding_minutes": 8700,
+        "exit_reason": "STOP@6271894 (STOP)"
+      },
+      {
+        "entry_time": "2019-05-02T01:00:00+00:00",
+        "exit_time": "2019-05-17T03:00:00+00:00",
+        "net_pnl": 12018.65,
+        "return_pct": 40.06224679116025,
+        "holding_minutes": 21720,
+        "exit_reason": "STOP@8664262 (STOP)"
+      },
+      {
+        "entry_time": "2019-05-26T21:00:00+00:00",
+        "exit_time": "2019-05-30T21:00:00+00:00",
+        "net_pnl": -110.01,
+        "return_pct": -0.3667009778692743,
+        "holding_minutes": 5760,
+        "exit_reason": "STOP@10145956 (STOP)"
+      },
+      {
+        "entry_time": "2019-06-13T21:00:00+00:00",
+        "exit_time": "2019-06-26T21:00:00+00:00",
+        "net_pnl": 14894.1,
+        "return_pct": 49.647165490551636,
+        "holding_minutes": 18720,
+        "exit_reason": "STOP@14885787 (STOP)"
+      },
+      {
+        "entry_time": "2019-07-09T01:00:00+00:00",
+        "exit_time": "2019-07-10T21:00:00+00:00",
+        "net_pnl": -1051.14,
+        "return_pct": -3.503814015256061,
+        "holding_minutes": 2640,
+        "exit_reason": "STOP@14032969 (STOP)"
+      },
+      {
+        "entry_time": "2019-08-01T21:00:00+00:00",
+        "exit_time": "2019-08-11T09:00:00+00:00",
+        "net_pnl": 3038.67,
+        "return_pct": 10.128920257840516,
+        "holding_minutes": 13680,
+        "exit_reason": "STOP@13588986 (STOP)"
+      },
+      {
+        "entry_time": "2019-08-19T09:00:00+00:00",
+        "exit_time": "2019-08-21T07:00:00+00:00",
+        "net_pnl": -1503.74,
+        "return_pct": -5.012481704111779,
+        "holding_minutes": 2760,
+        "exit_reason": "STOP@12250503 (STOP)"
+      },
+      {
+        "entry_time": "2019-09-03T01:00:00+00:00",
+        "exit_time": "2019-09-06T20:00:00+00:00",
+        "net_pnl": -338.84,
+        "return_pct": -1.1294693020950382,
+        "holding_minutes": 5460,
+        "exit_reason": "STOP@12347977 (STOP)"
+      },
+      {
+        "entry_time": "2020-01-08T01:00:00+00:00",
+        "exit_time": "2020-01-08T20:00:00+00:00",
+        "net_pnl": -2135.1,
+        "return_pct": -7.117021351064053,
+        "holding_minutes": 1140,
+        "exit_reason": "STOP@9044891 (STOP)"
+      },
+      {
+        "entry_time": "2020-01-17T05:00:00+00:00",
+        "exit_time": "2020-01-19T11:00:00+00:00",
+        "net_pnl": -391.54,
+        "return_pct": -1.305135508559181,
+        "holding_minutes": 3240,
+        "exit_reason": "STOP@9837907 (STOP)"
+      },
+      {
+        "entry_time": "2020-01-27T17:00:00+00:00",
+        "exit_time": "2020-02-04T10:00:00+00:00",
+        "net_pnl": 1468.11,
+        "return_pct": 4.893711418659977,
+        "holding_minutes": 11100,
+        "exit_reason": "STOP@10580514 (STOP)"
+      },
+      {
+        "entry_time": "2020-02-05T21:00:00+00:00",
+        "exit_time": "2020-02-11T01:00:00+00:00",
+        "net_pnl": 588.13,
+        "return_pct": 1.9604392146509773,
+        "holding_minutes": 7440,
+        "exit_reason": "STOP@11313154 (STOP)"
+      },
+      {
+        "entry_time": "2020-02-19T05:00:00+00:00",
+        "exit_time": "2020-02-19T21:00:00+00:00",
+        "net_pnl": -1273.47,
+        "return_pct": -4.24490282993522,
+        "holding_minutes": 960,
+        "exit_reason": "STOP@11353894 (STOP)"
+      },
+      {
+        "entry_time": "2020-03-05T13:00:00+00:00",
+        "exit_time": "2020-03-08T00:00:00+00:00",
+        "net_pnl": -597.72,
+        "return_pct": -1.9924006641335548,
+        "holding_minutes": 3540,
+        "exit_reason": "STOP@10579302 (STOP)"
+      },
+      {
+        "entry_time": "2020-04-24T09:00:00+00:00",
+        "exit_time": "2020-04-30T09:00:00+00:00",
+        "net_pnl": 4126.67,
+        "return_pct": 13.755585007446676,
+        "holding_minutes": 8640,
+        "exit_reason": "STOP@10469106 (STOP)"
+      },
+      {
+        "entry_time": "2020-05-06T13:00:00+00:00",
+        "exit_time": "2020-05-10T00:00:00+00:00",
+        "net_pnl": 323.75,
+        "return_pct": 1.0791684652807754,
+        "holding_minutes": 4980,
+        "exit_reason": "STOP@11333872 (STOP)"
+      },
+      {
+        "entry_time": "2020-05-28T13:00:00+00:00",
+        "exit_time": "2020-06-02T14:00:00+00:00",
+        "net_pnl": 364.04,
+        "return_pct": 1.2134694980954956,
+        "holding_minutes": 7260,
+        "exit_reason": "STOP@11602360 (STOP)"
+      },
+      {
+        "entry_time": "2020-06-22T21:00:00+00:00",
+        "exit_time": "2020-06-24T10:00:00+00:00",
+        "net_pnl": -662.69,
+        "return_pct": -2.208974029913433,
+        "holding_minutes": 2220,
+        "exit_reason": "STOP@11312097 (STOP)"
+      },
+      {
+        "entry_time": "2020-07-08T17:00:00+00:00",
+        "exit_time": "2020-07-10T05:00:00+00:00",
+        "net_pnl": -754.44,
+        "return_pct": -2.5148050296100593,
+        "holding_minutes": 2160,
+        "exit_reason": "STOP@10880313 (STOP)"
+      },
+      {
+        "entry_time": "2020-07-21T09:00:00+00:00",
+        "exit_time": "2020-08-02T04:00:00+00:00",
+        "net_pnl": 5203.92,
+        "return_pct": 17.346417346417347,
+        "holding_minutes": 16980,
+        "exit_reason": "STOP@13041821 (STOP)"
+      },
+      {
+        "entry_time": "2020-08-02T05:00:00+00:00",
+        "exit_time": "2020-08-02T05:00:00+00:00",
+        "net_pnl": -47.98,
+        "return_pct": -0.15993381313477273,
+        "holding_minutes": 0,
+        "exit_reason": "STOP@13195000 (STOP)"
+      },
+      {
+        "entry_time": "2020-08-10T05:00:00+00:00",
+        "exit_time": "2020-08-11T15:00:00+00:00",
+        "net_pnl": -1049.77,
+        "return_pct": -3.499244997483325,
+        "holding_minutes": 2040,
+        "exit_reason": "STOP@13652803 (STOP)"
+      },
+      {
+        "entry_time": "2020-08-17T17:00:00+00:00",
+        "exit_time": "2020-08-18T14:00:00+00:00",
+        "net_pnl": -787.45,
+        "return_pct": -2.624837708062847,
+        "holding_minutes": 1260,
+        "exit_reason": "STOP@13850577 (STOP)"
+      },
+      {
+        "entry_time": "2020-08-31T05:00:00+00:00",
+        "exit_time": "2020-09-02T11:00:00+00:00",
+        "net_pnl": -254.74,
+        "return_pct": -0.8491347485579143,
+        "holding_minutes": 3240,
+        "exit_reason": "STOP@13595546 (STOP)"
+      },
+      {
+        "entry_time": "2020-09-13T05:00:00+00:00",
+        "exit_time": "2020-09-21T09:00:00+00:00",
+        "net_pnl": 86.93,
+        "return_pct": 0.28976724620115907,
+        "holding_minutes": 11760,
+        "exit_reason": "STOP@12587416 (STOP)"
+      },
+      {
+        "entry_time": "2020-10-09T13:00:00+00:00",
+        "exit_time": "2020-10-26T16:00:00+00:00",
+        "net_pnl": 3925.38,
+        "return_pct": 13.084604361534787,
+        "holding_minutes": 24660,
+        "exit_reason": "STOP@14361262 (STOP)"
+      },
+      {
+        "entry_time": "2020-10-27T13:00:00+00:00",
+        "exit_time": "2020-10-28T14:00:00+00:00",
+        "net_pnl": -636.74,
+        "return_pct": -2.1224687891354557,
+        "holding_minutes": 1500,
+        "exit_reason": "STOP@14726868 (STOP)"
+      },
+      {
+        "entry_time": "2020-10-31T13:00:00+00:00",
+        "exit_time": "2020-11-07T19:00:00+00:00",
+        "net_pnl": 1528.95,
+        "return_pct": 5.0965016988339,
+        "holding_minutes": 10440,
+        "exit_reason": "STOP@16516696 (STOP)"
+      },
+      {
+        "entry_time": "2020-11-13T01:00:00+00:00",
+        "exit_time": "2020-11-18T05:00:00+00:00",
+        "net_pnl": 1682.92,
+        "return_pct": 5.60974081298775,
+        "holding_minutes": 7440,
+        "exit_reason": "STOP@19082002 (STOP)"
+      },
+      {
+        "entry_time": "2020-11-18T09:00:00+00:00",
+        "exit_time": "2020-11-26T07:00:00+00:00",
+        "net_pnl": -430.52,
+        "return_pct": -1.4350671450223818,
+        "holding_minutes": 11400,
+        "exit_reason": "STOP@19752594 (STOP)"
+      },
+      {
+        "entry_time": "2020-12-01T01:00:00+00:00",
+        "exit_time": "2020-12-08T09:00:00+00:00",
+        "net_pnl": -1010.99,
+        "return_pct": -3.369986886587986,
+        "holding_minutes": 10560,
+        "exit_reason": "STOP@20661000 (STOP)"
+      },
+      {
+        "entry_time": "2020-12-13T09:00:00+00:00",
+        "exit_time": "2021-01-04T09:00:00+00:00",
+        "net_pnl": 20199.04,
+        "return_pct": 67.33044754208854,
+        "holding_minutes": 31680,
+        "exit_reason": "STOP@35119888 (STOP)"
+      },
+      {
+        "entry_time": "2021-01-07T01:00:00+00:00",
+        "exit_time": "2021-01-10T17:00:00+00:00",
+        "net_pnl": 840.37,
+        "return_pct": 2.8012501408341786,
+        "holding_minutes": 5280,
+        "exit_reason": "STOP@42455340 (STOP)"
+      },
+      {
+        "entry_time": "2021-01-29T13:00:00+00:00",
+        "exit_time": "2021-01-31T17:00:00+00:00",
+        "net_pnl": -3625.8,
+        "return_pct": -12.086064459010448,
+        "holding_minutes": 3120,
+        "exit_reason": "STOP@35972810 (STOP)"
+      },
+      {
+        "entry_time": "2021-02-04T01:00:00+00:00",
+        "exit_time": "2021-02-22T10:00:00+00:00",
+        "net_pnl": 15443.72,
+        "return_pct": 51.47906666666667,
+        "holding_minutes": 26460,
+        "exit_reason": "STOP@60672282 (STOP)"
+      },
+      {
+        "entry_time": "2021-03-03T13:00:00+00:00",
+        "exit_time": "2021-03-15T07:00:00+00:00",
+        "net_pnl": 3232.03,
+        "return_pct": 10.77344410677744,
+        "holding_minutes": 16920,
+        "exit_reason": "STOP@66099067 (STOP)"
+      },
+      {
+        "entry_time": "2021-03-29T13:00:00+00:00",
+        "exit_time": "2021-04-07T07:00:00+00:00",
+        "net_pnl": 1953.1,
+        "return_pct": 6.510457032016942,
+        "holding_minutes": 12600,
+        "exit_reason": "STOP@73852986 (STOP)"
+      },
+      {
+        "entry_time": "2021-04-13T13:00:00+00:00",
+        "exit_time": "2021-04-18T01:00:00+00:00",
+        "net_pnl": -1663.01,
+        "return_pct": -5.5434313400323,
+        "holding_minutes": 6480,
+        "exit_reason": "STOP@77139795 (STOP)"
+      },
+      {
+        "entry_time": "2021-04-30T17:00:00+00:00",
+        "exit_time": "2021-05-04T23:00:00+00:00",
+        "net_pnl": -218.28,
+        "return_pct": -0.7276160075521662,
+        "holding_minutes": 6120,
+        "exit_reason": "STOP@66505897 (STOP)"
+      },
+      {
+        "entry_time": "2021-05-09T05:00:00+00:00",
+        "exit_time": "2021-05-12T22:00:00+00:00",
+        "net_pnl": -1910.16,
+        "return_pct": -6.3673485714666676,
+        "holding_minutes": 5340,
+        "exit_reason": "STOP@67552032 (STOP)"
+      },
+      {
+        "entry_time": "2021-07-31T01:00:00+00:00",
+        "exit_time": "2021-08-02T01:00:00+00:00",
+        "net_pnl": -1788.98,
+        "return_pct": -5.963272629939296,
+        "holding_minutes": 2880,
+        "exit_reason": "STOP@45567381 (STOP)"
+      },
+      {
+        "entry_time": "2021-08-06T17:00:00+00:00",
+        "exit_time": "2021-08-18T00:00:00+00:00",
+        "net_pnl": 2067.44,
+        "return_pct": 6.891508015714761,
+        "holding_minutes": 16260,
+        "exit_reason": "STOP@52436535 (STOP)"
+      },
+      {
+        "entry_time": "2021-08-20T17:00:00+00:00",
+        "exit_time": "2021-08-25T01:00:00+00:00",
+        "net_pnl": -492.93,
+        "return_pct": -1.6431240991534541,
+        "holding_minutes": 6240,
+        "exit_reason": "CHANNEL_EXIT<56357000"
+      },
+      {
+        "entry_time": "2021-09-06T01:00:00+00:00",
+        "exit_time": "2021-09-07T15:00:00+00:00",
+        "net_pnl": -761.4,
+        "return_pct": -2.5380346864740484,
+        "holding_minutes": 2280,
+        "exit_reason": "STOP@57932178 (STOP)"
+      },
+      {
+        "entry_time": "2021-09-15T17:00:00+00:00",
+        "exit_time": "2021-09-20T02:00:00+00:00",
+        "net_pnl": -374.52,
+        "return_pct": -1.2484079065834084,
+        "holding_minutes": 6300,
+        "exit_reason": "STOP@56547059 (STOP)"
+      },
+      {
+        "entry_time": "2021-10-01T09:00:00+00:00",
+        "exit_time": "2021-10-13T09:00:00+00:00",
+        "net_pnl": 6576.64,
+        "return_pct": 21.92234524933741,
+        "holding_minutes": 17280,
+        "exit_reason": "STOP@67060930 (STOP)"
+      },
+      {
+        "entry_time": "2021-10-15T05:00:00+00:00",
+        "exit_time": "2021-10-21T23:00:00+00:00",
+        "net_pnl": 1472.85,
+        "return_pct": 4.90950490950491,
+        "holding_minutes": 9720,
+        "exit_reason": "STOP@76374841 (STOP)"
+      },
+      {
+        "entry_time": "2021-11-08T01:00:00+00:00",
+        "exit_time": "2021-11-12T01:00:00+00:00",
+        "net_pnl": -175.17,
+        "return_pct": -0.5839009731682886,
+        "holding_minutes": 5760,
+        "exit_reason": "STOP@78400852 (STOP)"
+      },
+      {
+        "entry_time": "2022-03-25T13:00:00+00:00",
+        "exit_time": "2022-03-31T21:00:00+00:00",
+        "net_pnl": 954.81,
+        "return_pct": 3.1827530458840982,
+        "holding_minutes": 9120,
+        "exit_reason": "CHANNEL_EXIT<56015000"
+      },
+      {
+        "entry_time": "2022-11-05T05:00:00+00:00",
+        "exit_time": "2022-11-07T22:00:00+00:00",
+        "net_pnl": -830.86,
+        "return_pct": -2.76954071877525,
+        "holding_minutes": 3900,
+        "exit_reason": "STOP@28947473 (STOP)"
+      },
+      {
+        "entry_time": "2023-01-14T01:00:00+00:00",
+        "exit_time": "2023-01-30T19:00:00+00:00",
+        "net_pnl": 3332.38,
+        "return_pct": 11.10799627864558,
+        "holding_minutes": 24120,
+        "exit_reason": "STOP@28731470 (STOP)"
+      },
+      {
+        "entry_time": "2023-02-15T13:00:00+00:00",
+        "exit_time": "2023-02-16T23:00:00+00:00",
+        "net_pnl": 1104.54,
+        "return_pct": 3.681819636371394,
+        "holding_minutes": 2040,
+        "exit_reason": "STOP@30595108 (STOP)"
+      },
+      {
+        "entry_time": "2023-03-13T17:00:00+00:00",
+        "exit_time": "2023-03-22T21:00:00+00:00",
+        "net_pnl": 4711.42,
+        "return_pct": 15.70488514722309,
+        "holding_minutes": 13200,
+        "exit_reason": "CHANNEL_EXIT<35710000"
+      },
+      {
+        "entry_time": "2023-04-10T21:00:00+00:00",
+        "exit_time": "2023-04-16T20:00:00+00:00",
+        "net_pnl": 970.76,
+        "return_pct": 3.23587421703984,
+        "holding_minutes": 8580,
+        "exit_reason": "STOP@39609266 (STOP)"
+      },
+      {
+        "entry_time": "2023-04-26T01:00:00+00:00",
+        "exit_time": "2023-04-26T19:00:00+00:00",
+        "net_pnl": -15.88,
+        "return_pct": -0.05293365093523895,
+        "holding_minutes": 1080,
+        "exit_reason": "STOP@37848516 (STOP)"
+      },
+      {
+        "entry_time": "2023-05-28T21:00:00+00:00",
+        "exit_time": "2023-05-31T04:00:00+00:00",
+        "net_pnl": -224.62,
+        "return_pct": -0.7487378257602879,
+        "holding_minutes": 3300,
+        "exit_reason": "STOP@36614892 (STOP)"
+      },
+      {
+        "entry_time": "2023-06-20T17:00:00+00:00",
+        "exit_time": "2023-06-30T13:00:00+00:00",
+        "net_pnl": 3189.29,
+        "return_pct": 10.63108360858636,
+        "holding_minutes": 14160,
+        "exit_reason": "STOP@39838086 (STOP)"
+      },
+      {
+        "entry_time": "2023-08-02T01:00:00+00:00",
+        "exit_time": "2023-08-07T15:00:00+00:00",
+        "net_pnl": -494.99,
+        "return_pct": -1.6499859165023592,
+        "holding_minutes": 8040,
+        "exit_reason": "STOP@38330576 (STOP)"
+      },
+      {
+        "entry_time": "2023-08-08T13:00:00+00:00",
+        "exit_time": "2023-08-13T15:00:00+00:00",
+        "net_pnl": -71.91,
+        "return_pct": -0.23970031960042612,
+        "holding_minutes": 7320,
+        "exit_reason": "STOP@39216667 (STOP)"
+      },
+      {
+        "entry_time": "2023-10-02T01:00:00+00:00",
+        "exit_time": "2023-10-02T21:00:00+00:00",
+        "net_pnl": -305.14,
+        "return_pct": -1.0171455390798023,
+        "holding_minutes": 1200,
+        "exit_reason": "STOP@37356651 (STOP)"
+      },
+      {
+        "entry_time": "2023-10-16T09:00:00+00:00",
+        "exit_time": "2023-10-16T17:00:00+00:00",
+        "net_pnl": 188.34,
+        "return_pct": 0.6278056502508522,
+        "holding_minutes": 480,
+        "exit_reason": "STOP@38213000 (STOP)"
+      },
+      {
+        "entry_time": "2023-10-23T05:00:00+00:00",
+        "exit_time": "2023-11-03T01:00:00+00:00",
+        "net_pnl": 3800.81,
+        "return_pct": 12.669463799222461,
+        "holding_minutes": 15600,
+        "exit_reason": "STOP@46687892 (STOP)"
+      },
+      {
+        "entry_time": "2023-11-09T05:00:00+00:00",
+        "exit_time": "2023-11-14T00:00:00+00:00",
+        "net_pnl": -181.87,
+        "return_pct": -0.6062428311376878,
+        "holding_minutes": 6900,
+        "exit_reason": "STOP@48647668 (STOP)"
+      },
+      {
+        "entry_time": "2023-11-16T01:00:00+00:00",
+        "exit_time": "2023-11-16T19:00:00+00:00",
+        "net_pnl": -1182.77,
+        "return_pct": -3.9426087211596923,
+        "holding_minutes": 1080,
+        "exit_reason": "STOP@48419284 (STOP)"
+      },
+      {
+        "entry_time": "2023-11-24T13:00:00+00:00",
+        "exit_time": "2023-11-27T10:00:00+00:00",
+        "net_pnl": -519.69,
+        "return_pct": -1.7323219427446082,
+        "holding_minutes": 4140,
+        "exit_reason": "STOP@49803510 (STOP)"
+      },
+      {
+        "entry_time": "2023-12-01T13:00:00+00:00",
+        "exit_time": "2023-12-11T01:00:00+00:00",
+        "net_pnl": 4419.28,
+        "return_pct": 14.731149390191057,
+        "holding_minutes": 13680,
+        "exit_reason": "STOP@59065899 (STOP)"
+      },
+      {
+        "entry_time": "2023-12-20T17:00:00+00:00",
+        "exit_time": "2023-12-24T21:00:00+00:00",
+        "net_pnl": -351.95,
+        "return_pct": -1.1731834822965796,
+        "holding_minutes": 6000,
+        "exit_reason": "CHANNEL_EXIT<58900000"
+      },
+      {
+        "entry_time": "2024-01-02T01:00:00+00:00",
+        "exit_time": "2024-01-03T11:00:00+00:00",
+        "net_pnl": -784.35,
+        "return_pct": -2.6145,
+        "holding_minutes": 2040,
+        "exit_reason": "STOP@58508085 (STOP)"
+      },
+      {
+        "entry_time": "2024-01-08T17:00:00+00:00",
+        "exit_time": "2024-01-10T12:00:00+00:00",
+        "net_pnl": -346.5,
+        "return_pct": -1.1550146301853157,
+        "holding_minutes": 2580,
+        "exit_reason": "STOP@59796324 (STOP)"
+      },
+      {
+        "entry_time": "2024-01-26T21:00:00+00:00",
+        "exit_time": "2024-02-23T23:00:00+00:00",
+        "net_pnl": 6660.29,
+        "return_pct": 22.20132188781687,
+        "holding_minutes": 40440,
+        "exit_reason": "STOP@70883478 (STOP)"
+      },
+      {
+        "entry_time": "2024-02-26T17:00:00+00:00",
+        "exit_time": "2024-03-05T19:00:00+00:00",
+        "net_pnl": 7164.81,
+        "return_pct": 23.88281941409707,
+        "holding_minutes": 11640,
+        "exit_reason": "STOP@90759111 (STOP)"
+      },
+      {
+        "entry_time": "2024-03-11T09:00:00+00:00",
+        "exit_time": "2024-03-15T03:00:00+00:00",
+        "net_pnl": -52.11,
+        "return_pct": -0.1737048637361846,
+        "holding_minutes": 5400,
+        "exit_reason": "STOP@99588287 (STOP)"
+      },
+      {
+        "entry_time": "2024-03-25T21:00:00+00:00",
+        "exit_time": "2024-04-01T06:00:00+00:00",
+        "net_pnl": -384.95,
+        "return_pct": -1.2831863421905803,
+        "holding_minutes": 9180,
+        "exit_reason": "STOP@99148418 (STOP)"
+      },
+      {
+        "entry_time": "2024-04-08T13:00:00+00:00",
+        "exit_time": "2024-04-09T14:00:00+00:00",
+        "net_pnl": -1047.8,
+        "return_pct": -3.492751656956986,
+        "holding_minutes": 1500,
+        "exit_reason": "STOP@99177761 (STOP)"
+      },
+      {
+        "entry_time": "2024-04-22T09:00:00+00:00",
+        "exit_time": "2024-04-24T17:00:00+00:00",
+        "net_pnl": -621.09,
+        "return_pct": -2.070358660162038,
+        "holding_minutes": 3360,
+        "exit_reason": "CHANNEL_EXIT<94312000"
+      },
+      {
+        "entry_time": "2024-05-15T17:00:00+00:00",
+        "exit_time": "2024-05-23T18:00:00+00:00",
+        "net_pnl": 959.42,
+        "return_pct": 3.1980698647365315,
+        "holding_minutes": 11580,
+        "exit_reason": "STOP@93633302 (STOP)"
+      },
+      {
+        "entry_time": "2024-05-27T17:00:00+00:00",
+        "exit_time": "2024-05-28T03:00:00+00:00",
+        "net_pnl": -778.38,
+        "return_pct": -2.59467784033521,
+        "holding_minutes": 600,
+        "exit_reason": "STOP@94326465 (STOP)"
+      },
+      {
+        "entry_time": "2024-06-03T17:00:00+00:00",
+        "exit_time": "2024-06-10T05:00:00+00:00",
+        "net_pnl": 390.52,
+        "return_pct": 1.3017615381666603,
+        "holding_minutes": 9360,
+        "exit_reason": "STOP@97607734 (STOP)"
+      },
+      {
+        "entry_time": "2024-07-16T01:00:00+00:00",
+        "exit_time": "2024-07-23T21:00:00+00:00",
+        "net_pnl": 562.14,
+        "return_pct": 1.873845596909525,
+        "holding_minutes": 11280,
+        "exit_reason": "CHANNEL_EXIT<92413000"
+      },
+      {
+        "entry_time": "2024-07-27T09:00:00+00:00",
+        "exit_time": "2024-07-30T05:00:00+00:00",
+        "net_pnl": -567.93,
+        "return_pct": -1.893111358668152,
+        "holding_minutes": 4080,
+        "exit_reason": "CHANNEL_EXIT<93150000"
+      },
+      {
+        "entry_time": "2024-09-23T05:00:00+00:00",
+        "exit_time": "2024-09-30T01:00:00+00:00",
+        "net_pnl": -208.9,
+        "return_pct": -0.6963467960380567,
+        "holding_minutes": 9840,
+        "exit_reason": "STOP@85051835 (STOP)"
+      },
+      {
+        "entry_time": "2024-10-07T05:00:00+00:00",
+        "exit_time": "2024-10-08T01:00:00+00:00",
+        "net_pnl": -356.45,
+        "return_pct": -1.1881765681380678,
+        "holding_minutes": 1200,
+        "exit_reason": "TREND_LOSS_EXIT"
+      },
+      {
+        "entry_time": "2024-10-14T05:00:00+00:00",
+        "exit_time": "2024-10-21T13:00:00+00:00",
+        "net_pnl": 1909.91,
+        "return_pct": 6.366404865095857,
+        "holding_minutes": 10560,
+        "exit_reason": "STOP@91945919 (STOP)"
+      },
+      {
+        "entry_time": "2024-10-28T09:00:00+00:00",
+        "exit_time": "2024-10-31T15:00:00+00:00",
+        "net_pnl": 1030.06,
+        "return_pct": 3.4336351978442026,
+        "holding_minutes": 4680,
+        "exit_reason": "STOP@98516102 (STOP)"
+      },
+      {
+        "entry_time": "2024-11-06T05:00:00+00:00",
+        "exit_time": "2024-11-22T13:00:00+00:00",
+        "net_pnl": 8340.8,
+        "return_pct": 27.802787145410964,
+        "holding_minutes": 23520,
+        "exit_reason": "STOP@131464679 (STOP)"
+      },
+      {
+        "entry_time": "2024-12-04T21:00:00+00:00",
+        "exit_time": "2024-12-09T09:00:00+00:00",
+        "net_pnl": -179.14,
+        "return_pct": -0.5971524422114841,
+        "holding_minutes": 6480,
+        "exit_reason": "STOP@137833056 (STOP)"
+      },
+      {
+        "entry_time": "2024-12-11T17:00:00+00:00",
+        "exit_time": "2024-12-18T22:00:00+00:00",
+        "net_pnl": 1544.72,
+        "return_pct": 5.149300101604606,
+        "holding_minutes": 10380,
+        "exit_reason": "STOP@150219389 (STOP)"
+      },
+      {
+        "entry_time": "2025-01-02T13:00:00+00:00",
+        "exit_time": "2025-01-07T15:00:00+00:00",
+        "net_pnl": 282.19,
+        "return_pct": 0.9406650023884138,
+        "holding_minutes": 7320,
+        "exit_reason": "STOP@145484566 (STOP)"
+      },
+      {
+        "entry_time": "2025-01-14T13:00:00+00:00",
+        "exit_time": "2025-01-19T23:00:00+00:00",
+        "net_pnl": 1768.86,
+        "return_pct": 5.896315960880564,
+        "holding_minutes": 7800,
+        "exit_reason": "STOP@151679509 (STOP)"
+      },
+      {
+        "entry_time": "2025-01-20T09:00:00+00:00",
+        "exit_time": "2025-01-23T04:00:00+00:00",
+        "net_pnl": -1852.33,
+        "return_pct": -6.174680320546155,
+        "holding_minutes": 4020,
+        "exit_reason": "STOP@152148624 (STOP)"
+      },
+      {
+        "entry_time": "2025-01-30T05:00:00+00:00",
+        "exit_time": "2025-02-02T03:00:00+00:00",
+        "net_pnl": -892.36,
+        "return_pct": -2.9746741345757033,
+        "holding_minutes": 4200,
+        "exit_reason": "STOP@155445811 (STOP)"
+      },
+      {
+        "entry_time": "2025-04-23T01:00:00+00:00",
+        "exit_time": "2025-05-04T17:00:00+00:00",
+        "net_pnl": 900.91,
+        "return_pct": 3.0031594660309064,
+        "holding_minutes": 16800,
+        "exit_reason": "STOP@136900000 (STOP)"
+      },
+      {
+        "entry_time": "2025-05-08T05:00:00+00:00",
+        "exit_time": "2025-05-19T05:00:00+00:00",
+        "net_pnl": 1445.87,
+        "return_pct": 4.819622895600449,
+        "holding_minutes": 15840,
+        "exit_reason": "STOP@146397492 (STOP)"
+      },
+      {
+        "entry_time": "2025-05-21T17:00:00+00:00",
+        "exit_time": "2025-05-28T14:00:00+00:00",
+        "net_pnl": -299.6,
+        "return_pct": -0.9986746560639151,
+        "holding_minutes": 9900,
+        "exit_reason": "STOP@150318201 (STOP)"
+      },
+      {
+        "entry_time": "2025-06-09T13:00:00+00:00",
+        "exit_time": "2025-06-12T10:00:00+00:00",
+        "net_pnl": -301.33,
+        "return_pct": -1.0044473955968718,
+        "holding_minutes": 4140,
+        "exit_reason": "STOP@147249469 (STOP)"
+      },
+      {
+        "entry_time": "2025-06-25T13:00:00+00:00",
+        "exit_time": "2025-07-01T01:00:00+00:00",
+        "net_pnl": -365.83,
+        "return_pct": -1.2194906493938549,
+        "holding_minutes": 7920,
+        "exit_reason": "CHANNEL_EXIT<146060000"
+      },
+      {
+        "entry_time": "2025-07-02T21:00:00+00:00",
+        "exit_time": "2025-07-15T02:00:00+00:00",
+        "net_pnl": 2686.03,
+        "return_pct": 8.953516899491062,
+        "holding_minutes": 17580,
+        "exit_reason": "STOP@161502808 (STOP)"
+      },
+      {
+        "entry_time": "2025-07-29T05:00:00+00:00",
+        "exit_time": "2025-08-01T00:00:00+00:00",
+        "net_pnl": -520.79,
+        "return_pct": -1.7360089095501323,
+        "holding_minutes": 4020,
+        "exit_reason": "STOP@160663444 (STOP)"
+      },
+      {
+        "entry_time": "2025-08-07T21:00:00+00:00",
+        "exit_time": "2025-08-14T12:00:00+00:00",
+        "net_pnl": 522.79,
+        "return_pct": 1.7426437891960684,
+        "holding_minutes": 9540,
+        "exit_reason": "STOP@164533266 (STOP)"
+      },
+      {
+        "entry_time": "2025-09-05T09:00:00+00:00",
+        "exit_time": "2025-09-22T00:00:00+00:00",
+        "net_pnl": 639.77,
+        "return_pct": 2.132590836029475,
+        "holding_minutes": 23940,
+        "exit_reason": "STOP@160799628 (STOP)"
+      },
+      {
+        "entry_time": "2025-09-29T17:00:00+00:00",
+        "exit_time": "2025-10-10T17:00:00+00:00",
+        "net_pnl": 2127.29,
+        "return_pct": 7.09123140597249,
+        "holding_minutes": 15840,
+        "exit_reason": "STOP@174148112 (STOP)"
+      },
+      {
+        "entry_time": "2025-10-27T01:00:00+00:00",
+        "exit_time": "2025-10-29T14:00:00+00:00",
+        "net_pnl": -617.18,
+        "return_pct": -2.057355132937383,
+        "holding_minutes": 3660,
+        "exit_reason": "STOP@166799346 (STOP)"
+      },
+      {
+        "entry_time": "2026-04-22T09:00:00+00:00",
+        "exit_time": "2026-04-27T16:00:00+00:00",
+        "net_pnl": -267.91,
+        "return_pct": -0.8930336310112104,
+        "holding_minutes": 7620,
+        "exit_reason": "STOP@114288027 (STOP)"
+      },
+      {
+        "entry_time": "2026-05-04T05:00:00+00:00",
+        "exit_time": "2026-05-10T20:00:00+00:00",
+        "net_pnl": -121.56,
+        "return_pct": -0.4052137772684271,
+        "holding_minutes": 9540,
+        "exit_reason": "STOP@118209058 (STOP)"
+      },
+      {
+        "entry_time": "2026-08-21T01:00:00+00:00",
+        "exit_time": "2026-08-28T16:00:00+00:00",
+        "net_pnl": 1694.36,
+        "return_pct": 5.64799657058779,
+        "holding_minutes": 10980,
+        "exit_reason": "STOP@107263981 (STOP)"
+      },
+      {
+        "entry_time": "2026-09-03T17:00:00+00:00",
+        "exit_time": "2026-09-06T14:00:00+00:00",
+        "net_pnl": -585.34,
+        "return_pct": -1.9511398371327904,
+        "holding_minutes": 4140,
+        "exit_reason": "STOP@108606925 (STOP)"
+      }
+    ]
+  },
+  "recent_2y": {
+    "available": true,
+    "start": "2024-09-25T00:00:00+00:00",
+    "end": "2026-09-25T14:00:00+00:00",
+    "net_return_pct": 19.52882,
+    "max_drawdown_pct": 3.718067652432811,
+    "profit_factor": 3.5458162332913763,
+    "trades": 26,
+    "win_rate": 0.5,
+    "expectancy": 686.8896153846154,
+    "exposure_pct": 24.218928164196125,
+    "fees": 803.83,
+    "buy_hold_return_pct": 33.22306681681682,
+    "max_consecutive_losses": 3,
+    "trades_list": [
+      {
+        "entry_time": "2024-09-27T13:00:00+00:00",
+        "exit_time": "2024-09-30T01:00:00+00:00",
+        "net_pnl": -657.61,
+        "return_pct": -2.192076444170069,
+        "holding_minutes": 3600,
+        "exit_reason": "STOP@85051835 (STOP)"
+      },
+      {
+        "entry_time": "2024-10-07T05:00:00+00:00",
+        "exit_time": "2024-10-08T01:00:00+00:00",
+        "net_pnl": -354.11,
+        "return_pct": -1.1881737603882578,
+        "holding_minutes": 1200,
+        "exit_reason": "TREND_LOSS_EXIT"
+      },
+      {
+        "entry_time": "2024-10-14T05:00:00+00:00",
+        "exit_time": "2024-10-21T13:00:00+00:00",
+        "net_pnl": 1890.57,
+        "return_pct": 6.366430135857047,
+        "holding_minutes": 10560,
+        "exit_reason": "STOP@91945919 (STOP)"
+      },
+      {
+        "entry_time": "2024-10-28T09:00:00+00:00",
+        "exit_time": "2024-10-31T15:00:00+00:00",
+        "net_pnl": 1030.06,
+        "return_pct": 3.4336351978442026,
+        "holding_minutes": 4680,
+        "exit_reason": "STOP@98516102 (STOP)"
+      },
+      {
+        "entry_time": "2024-11-06T05:00:00+00:00",
+        "exit_time": "2024-11-22T13:00:00+00:00",
+        "net_pnl": 8340.8,
+        "return_pct": 27.802787145410964,
+        "holding_minutes": 23520,
+        "exit_reason": "STOP@131464679 (STOP)"
+      },
+      {
+        "entry_time": "2024-12-04T21:00:00+00:00",
+        "exit_time": "2024-12-09T09:00:00+00:00",
+        "net_pnl": -179.14,
+        "return_pct": -0.5971524422114841,
+        "holding_minutes": 6480,
+        "exit_reason": "STOP@137833056 (STOP)"
+      },
+      {
+        "entry_time": "2024-12-11T17:00:00+00:00",
+        "exit_time": "2024-12-18T22:00:00+00:00",
+        "net_pnl": 1544.72,
+        "return_pct": 5.149300101604606,
+        "holding_minutes": 10380,
+        "exit_reason": "STOP@150219389 (STOP)"
+      },
+      {
+        "entry_time": "2025-01-02T13:00:00+00:00",
+        "exit_time": "2025-01-07T15:00:00+00:00",
+        "net_pnl": 282.19,
+        "return_pct": 0.9406650023884138,
+        "holding_minutes": 7320,
+        "exit_reason": "STOP@145484566 (STOP)"
+      },
+      {
+        "entry_time": "2025-01-14T13:00:00+00:00",
+        "exit_time": "2025-01-19T23:00:00+00:00",
+        "net_pnl": 1768.86,
+        "return_pct": 5.896315960880564,
+        "holding_minutes": 7800,
+        "exit_reason": "STOP@151679509 (STOP)"
+      },
+      {
+        "entry_time": "2025-01-20T09:00:00+00:00",
+        "exit_time": "2025-01-23T04:00:00+00:00",
+        "net_pnl": -1852.33,
+        "return_pct": -6.174680320546155,
+        "holding_minutes": 4020,
+        "exit_reason": "STOP@152148624 (STOP)"
+      },
+      {
+        "entry_time": "2025-01-30T05:00:00+00:00",
+        "exit_time": "2025-02-02T03:00:00+00:00",
+        "net_pnl": -892.36,
+        "return_pct": -2.9746741345757033,
+        "holding_minutes": 4200,
+        "exit_reason": "STOP@155445811 (STOP)"
+      },
+      {
+        "entry_time": "2025-04-23T01:00:00+00:00",
+        "exit_time": "2025-05-04T17:00:00+00:00",
+        "net_pnl": 900.91,
+        "return_pct": 3.0031594660309064,
+        "holding_minutes": 16800,
+        "exit_reason": "STOP@136900000 (STOP)"
+      },
+      {
+        "entry_time": "2025-05-08T05:00:00+00:00",
+        "exit_time": "2025-05-19T05:00:00+00:00",
+        "net_pnl": 1445.87,
+        "return_pct": 4.819622895600449,
+        "holding_minutes": 15840,
+        "exit_reason": "STOP@146397492 (STOP)"
+      },
+      {
+        "entry_time": "2025-05-21T17:00:00+00:00",
+        "exit_time": "2025-05-28T14:00:00+00:00",
+        "net_pnl": -299.6,
+        "return_pct": -0.9986746560639151,
+        "holding_minutes": 9900,
+        "exit_reason": "STOP@150318201 (STOP)"
+      },
+      {
+        "entry_time": "2025-06-09T13:00:00+00:00",
+        "exit_time": "2025-06-12T10:00:00+00:00",
+        "net_pnl": -301.33,
+        "return_pct": -1.0044473955968718,
+        "holding_minutes": 4140,
+        "exit_reason": "STOP@147249469 (STOP)"
+      },
+      {
+        "entry_time": "2025-06-25T13:00:00+00:00",
+        "exit_time": "2025-07-01T01:00:00+00:00",
+        "net_pnl": -365.83,
+        "return_pct": -1.2194906493938549,
+        "holding_minutes": 7920,
+        "exit_reason": "CHANNEL_EXIT<146060000"
+      },
+      {
+        "entry_time": "2025-07-02T21:00:00+00:00",
+        "exit_time": "2025-07-15T02:00:00+00:00",
+        "net_pnl": 2686.03,
+        "return_pct": 8.953516899491062,
+        "holding_minutes": 17580,
+        "exit_reason": "STOP@161502808 (STOP)"
+      },
+      {
+        "entry_time": "2025-07-29T05:00:00+00:00",
+        "exit_time": "2025-08-01T00:00:00+00:00",
+        "net_pnl": -520.79,
+        "return_pct": -1.7360089095501323,
+        "holding_minutes": 4020,
+        "exit_reason": "STOP@160663444 (STOP)"
+      },
+      {
+        "entry_time": "2025-08-07T21:00:00+00:00",
+        "exit_time": "2025-08-14T12:00:00+00:00",
+        "net_pnl": 522.79,
+        "return_pct": 1.7426437891960684,
+        "holding_minutes": 9540,
+        "exit_reason": "STOP@164533266 (STOP)"
+      },
+      {
+        "entry_time": "2025-09-05T09:00:00+00:00",
+        "exit_time": "2025-09-22T00:00:00+00:00",
+        "net_pnl": 639.77,
+        "return_pct": 2.132590836029475,
+        "holding_minutes": 23940,
+        "exit_reason": "STOP@160799628 (STOP)"
+      },
+      {
+        "entry_time": "2025-09-29T17:00:00+00:00",
+        "exit_time": "2025-10-10T17:00:00+00:00",
+        "net_pnl": 2127.29,
+        "return_pct": 7.09123140597249,
+        "holding_minutes": 15840,
+        "exit_reason": "STOP@174148112 (STOP)"
+      },
+      {
+        "entry_time": "2025-10-27T01:00:00+00:00",
+        "exit_time": "2025-10-29T14:00:00+00:00",
+        "net_pnl": -617.18,
+        "return_pct": -2.057355132937383,
+        "holding_minutes": 3660,
+        "exit_reason": "STOP@166799346 (STOP)"
+      },
+      {
+        "entry_time": "2026-04-22T09:00:00+00:00",
+        "exit_time": "2026-04-27T16:00:00+00:00",
+        "net_pnl": -267.91,
+        "return_pct": -0.8930336310112104,
+        "holding_minutes": 7620,
+        "exit_reason": "STOP@114288027 (STOP)"
+      },
+      {
+        "entry_time": "2026-05-04T05:00:00+00:00",
+        "exit_time": "2026-05-10T20:00:00+00:00",
+        "net_pnl": -121.56,
+        "return_pct": -0.4052137772684271,
+        "holding_minutes": 9540,
+        "exit_reason": "STOP@118209058 (STOP)"
+      },
+      {
+        "entry_time": "2026-08-21T01:00:00+00:00",
+        "exit_time": "2026-08-28T16:00:00+00:00",
+        "net_pnl": 1694.36,
+        "return_pct": 5.64799657058779,
+        "holding_minutes": 10980,
+        "exit_reason": "STOP@107263981 (STOP)"
+      },
+      {
+        "entry_time": "2026-09-03T17:00:00+00:00",
+        "exit_time": "2026-09-06T14:00:00+00:00",
+        "net_pnl": -585.34,
+        "return_pct": -1.9511398371327904,
+        "holding_minutes": 4140,
+        "exit_reason": "STOP@108606925 (STOP)"
+      }
+    ]
+  },
+  "ytd_2026": {
+    "available": true,
+    "start": "2026-01-01T00:00:00+00:00",
+    "end": "2026-09-25T14:00:00+00:00",
+    "net_return_pct": 2.38298,
+    "max_drawdown_pct": 1.6722397904440371,
+    "profit_factor": 1.7319698711107463,
+    "trades": 4,
+    "win_rate": 0.25,
+    "expectancy": 178.3225,
+    "exposure_pct": 10.952084629744867,
+    "fees": 135.21,
+    "buy_hold_return_pct": -11.2734375,
+    "max_consecutive_losses": 2,
+    "trades_list": [
+      {
+        "entry_time": "2026-04-22T09:00:00+00:00",
+        "exit_time": "2026-04-27T16:00:00+00:00",
+        "net_pnl": -267.91,
+        "return_pct": -0.8930336310112104,
+        "holding_minutes": 7620,
+        "exit_reason": "STOP@114288027 (STOP)"
+      },
+      {
+        "entry_time": "2026-05-04T05:00:00+00:00",
+        "exit_time": "2026-05-10T20:00:00+00:00",
+        "net_pnl": -121.23,
+        "return_pct": -0.4051864399075387,
+        "holding_minutes": 9540,
+        "exit_reason": "STOP@118209058 (STOP)"
+      },
+      {
+        "entry_time": "2026-08-21T01:00:00+00:00",
+        "exit_time": "2026-08-28T16:00:00+00:00",
+        "net_pnl": 1687.77,
+        "return_pct": 5.647983615938319,
+        "holding_minutes": 10980,
+        "exit_reason": "STOP@107263981 (STOP)"
+      },
+      {
+        "entry_time": "2026-09-03T17:00:00+00:00",
+        "exit_time": "2026-09-06T14:00:00+00:00",
+        "net_pnl": -585.34,
+        "return_pct": -1.9511398371327904,
+        "holding_minutes": 4140,
+        "exit_reason": "STOP@108606925 (STOP)"
+      }
+    ]
+  },
+  "fake_breakout_full": {
+    "definition": "losing trade closed within 48h of entry",
+    "count": 25,
+    "rate": 0.21551724137931033,
+    "stop_exits": 107
+  },
+  "fake_breakout_oos": {
+    "definition": "losing trade closed within 48h of entry",
+    "count": 22,
+    "rate": 0.20952380952380953,
+    "stop_exits": 96
+  },
+  "gate": {
+    "verdict": "PASS",
+    "checks": {
+      "oos_return_gt_0": true,
+      "oos_pf_ge_1.20": true,
+      "oos_mdd_le_10": true,
+      "profitable_windows_ge_60pct": true,
+      "cost_1.5x_positive": true,
+      "oos_trades_ge_50": true,
+      "oos_trades_ge_30": true,
+      "cost_2.0x_positive": true,
+      "no_concentration_risk": true,
+      "recent_2y_not_collapsed": true
+    },
+    "notes": []
+  },
+  "elapsed_sec": 8.0,
+  "determinism_check": {
+    "identical": true
+  }
+}

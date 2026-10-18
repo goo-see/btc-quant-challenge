@@ -1,0 +1,522 @@
+{
+ "params": {
+  "key": "G0",
+  "description": "fixed 0.75% gap",
+  "gap_pct": "0.0075",
+  "atr_min_pct": "0.0075",
+  "atr_max_pct": "0.02",
+  "atr_mult": "1",
+  "budget_krw": "50000",
+  "unit_krw": "5000",
+  "seed_krw": "25000",
+  "max_inventory_krw": "40000",
+  "min_cash_krw": "10000",
+  "levels_each_side": 10,
+  "fee_rate": "0.0005",
+  "slip": "0.0005",
+  "daily_loss_pause_pct": "0.05",
+  "mdd_halt_pct": "0.12",
+  "ema_period": 100
+ },
+ "full": {
+  "label": "full",
+  "start": "2017-09-30",
+  "end": "2026-10-05",
+  "days": 3291,
+  "total_return_pct": 53.600519999999996,
+  "cagr_pct": 4.875136809904856,
+  "max_drawdown_pct": 25.735094951321436,
+  "profit_factor": 2.6488864558688068,
+  "cycle_profit_factor": Infinity,
+  "positive_days_ratio": 0.016109422492401215,
+  "completed_cycles": 871,
+  "trades": 1742,
+  "win_rate": 1.0,
+  "expectancy_per_cycle": 30.769529276693454,
+  "avg_cycle_profit": 30.769529276693454,
+  "avg_cycle_duration_h": 7.973982013011864,
+  "fees": 4373.5,
+  "fee_to_gross_ratio": 0.14029427313227535,
+  "realized": 26800.26,
+  "unrealized_end": 0.0,
+  "max_inventory_krw": 38584.1375709203,
+  "avg_inventory_krw": 453.6411236838366,
+  "longest_underwater_days": 12,
+  "min_cash_krw": 17052.54,
+  "cash_reserve_violations": 0,
+  "inventory_violations": 0,
+  "daily_trades_mean": 34.15686274509804,
+  "daily_trades_median": 23.0,
+  "best_day_krw": 4270.43,
+  "worst_day_krw": -8256.98,
+  "halted": true,
+  "halt_reason": "MDD 12.35%",
+  "recenters": 1201,
+  "guard_days_off": 59,
+  "daily_pauses": 3,
+  "end_equity": 76800.26
+ },
+ "regimes": {
+  "BULL": {
+   "windows": 10,
+   "return_pct_sum": 52.337097051890424,
+   "worst_mdd_pct": 10.881816752503234,
+   "cycles": 871,
+   "fees_proxy": 0.0,
+   "min_return_pct": 0.0,
+   "eth_return_sum": 910.5923687696129,
+   "avg_return_pct": 5.233709705189042,
+   "avg_eth_return_pct": 91.0592368769613
+  },
+  "CRASH": {
+   "windows": 18,
+   "return_pct_sum": 0.0,
+   "worst_mdd_pct": 0.0,
+   "cycles": 0,
+   "fees_proxy": 0.0,
+   "min_return_pct": 0.0,
+   "eth_return_sum": -357.11407315936003,
+   "avg_return_pct": 0.0,
+   "avg_eth_return_pct": -19.839670731075557
+  },
+  "SIDEWAYS": {
+   "windows": 8,
+   "return_pct_sum": 0.0,
+   "worst_mdd_pct": 0.0,
+   "cycles": 0,
+   "fees_proxy": 0.0,
+   "min_return_pct": 0.0,
+   "eth_return_sum": 84.93671474191441,
+   "avg_return_pct": 0.0,
+   "avg_eth_return_pct": 10.617089342739302
+  }
+ },
+ "regime_windows": [
+  {
+   "start": "2017-09-30",
+   "end": "2017-12-31",
+   "label": "BULL",
+   "eth_return_pct": 200.87976539589442,
+   "eth_dd_pct": 18.358008075370122
+  },
+  {
+   "start": "2018-01-01",
+   "end": "2018-03-31",
+   "label": "CRASH",
+   "eth_return_pct": -58.60454115421003,
+   "eth_dd_pct": 80.09103641456583
+  },
+  {
+   "start": "2018-04-01",
+   "end": "2018-06-29",
+   "label": "CRASH",
+   "eth_return_pct": 17.598068799034404,
+   "eth_dd_pct": 46.758590014455685
+  },
+  {
+   "start": "2018-06-30",
+   "end": "2018-09-27",
+   "label": "CRASH",
+   "eth_return_pct": -49.98037291462217,
+   "eth_dd_pct": 61.979261415317445
+  },
+  {
+   "start": "2018-09-28",
+   "end": "2018-12-26",
+   "label": "CRASH",
+   "eth_return_pct": -40.66155707946753,
+   "eth_dd_pct": 63.69402267922353
+  },
+  {
+   "start": "2018-12-27",
+   "end": "2019-03-26",
+   "label": "CRASH",
+   "eth_return_pct": 15.901328273244776,
+   "eth_dd_pct": 33.25681492109039
+  },
+  {
+   "start": "2019-03-27",
+   "end": "2019-06-24",
+   "label": "BULL",
+   "eth_return_pct": 131.24203821656053,
+   "eth_dd_pct": 14.11396970425583
+  },
+  {
+   "start": "2019-06-25",
+   "end": "2019-09-22",
+   "label": "CRASH",
+   "eth_return_pct": -33.20031923383878,
+   "eth_dd_pct": 50.70525291828793
+  },
+  {
+   "start": "2019-09-23",
+   "end": "2019-12-21",
+   "label": "CRASH",
+   "eth_return_pct": -38.62068965517241,
+   "eth_dd_pct": 40.56426332288402
+  },
+  {
+   "start": "2019-12-22",
+   "end": "2020-03-20",
+   "label": "CRASH",
+   "eth_return_pct": 10.418727332673928,
+   "eth_dd_pct": 57.17975991490655
+  },
+  {
+   "start": "2020-03-21",
+   "end": "2020-06-18",
+   "label": "BULL",
+   "eth_return_pct": 68.29268292682926,
+   "eth_dd_pct": 12.683114880493445
+  },
+  {
+   "start": "2020-06-19",
+   "end": "2020-09-16",
+   "label": "BULL",
+   "eth_return_pct": 54.80907780979827,
+   "eth_dd_pct": 27.520631503408683
+  },
+  {
+   "start": "2020-09-17",
+   "end": "2020-12-15",
+   "label": "BULL",
+   "eth_return_pct": 40.40825285338017,
+   "eth_dd_pct": 17.625109745390695
+  },
+  {
+   "start": "2020-12-16",
+   "end": "2021-03-15",
+   "label": "BULL",
+   "eth_return_pct": 203.730797366496,
+   "eth_dd_pct": 26.644144144144143
+  },
+  {
+   "start": "2021-03-16",
+   "end": "2021-06-13",
+   "label": "CRASH",
+   "eth_return_pct": 37.24368144969004,
+   "eth_dd_pct": 49.53106682297773
+  },
+  {
+   "start": "2021-06-14",
+   "end": "2021-09-11",
+   "label": "BULL",
+   "eth_return_pct": 34.04327248140635,
+   "eth_dd_pct": 28.363759296822177
+  },
+  {
+   "start": "2021-09-12",
+   "end": "2021-12-10",
+   "label": "SIDEWAYS",
+   "eth_return_pct": 21.714566445590755,
+   "eth_dd_pct": 19.71568398974598
+  },
+  {
+   "start": "2021-12-11",
+   "end": "2022-03-10",
+   "label": "CRASH",
+   "eth_return_pct": -36.47081941442326,
+   "eth_dd_pct": 41.78550498144169
+  },
+  {
+   "start": "2022-03-11",
+   "end": "2022-06-08",
+   "label": "CRASH",
+   "eth_return_pct": -28.405887879736923,
+   "eth_dd_pct": 48.41177834453976
+  },
+  {
+   "start": "2022-06-09",
+   "end": "2022-09-06",
+   "label": "CRASH",
+   "eth_return_pct": -3.9595248570171604,
+   "eth_dd_pct": 42.23493180818302
+  },
+  {
+   "start": "2022-09-07",
+   "end": "2022-12-05",
+   "label": "CRASH",
+   "eth_return_pct": -25.375773651635726,
+   "eth_dd_pct": 35.430463576158935
+  },
+  {
+   "start": "2022-12-06",
+   "end": "2023-03-05",
+   "label": "SIDEWAYS",
+   "eth_return_pct": 23.13125367863449,
+   "eth_dd_pct": 12.024397327911705
+  },
+  {
+   "start": "2023-03-06",
+   "end": "2023-06-03",
+   "label": "SIDEWAYS",
+   "eth_return_pct": 20.52884615384616,
+   "eth_dd_pct": 12.47739602169982
+  },
+  {
+   "start": "2023-06-04",
+   "end": "2023-09-01",
+   "label": "SIDEWAYS",
+   "eth_return_pct": -10.79136690647482,
+   "eth_dd_pct": 13.555383423702555
+  },
+  {
+   "start": "2023-09-02",
+   "end": "2023-11-30",
+   "label": "SIDEWAYS",
+   "eth_return_pct": 23.48450830713964,
+   "eth_dd_pct": 9.615384615384617
+  },
+  {
+   "start": "2023-12-01",
+   "end": "2024-02-28",
+   "label": "BULL",
+   "eth_return_pct": 70.04294917680744,
+   "eth_dd_pct": 14.834400222655164
+  },
+  {
+   "start": "2024-02-29",
+   "end": "2024-05-28",
+   "label": "SIDEWAYS",
+   "eth_return_pct": 13.370236321055984,
+   "eth_dd_pct": 29.031693223603572
+  },
+  {
+   "start": "2024-05-29",
+   "end": "2024-08-26",
+   "label": "CRASH",
+   "eth_return_pct": -31.123423767672907,
+   "eth_dd_pct": 37.54911131898971
+  },
+  {
+   "start": "2024-08-27",
+   "end": "2024-11-24",
+   "label": "BULL",
+   "eth_return_pct": 39.62940824865511,
+   "eth_dd_pct": 11.785195936139333
+  },
+  {
+   "start": "2024-11-25",
+   "end": "2025-02-22",
+   "label": "CRASH",
+   "eth_return_pct": -14.498844295019964,
+   "eth_dd_pct": 31.52060962937305
+  },
+  {
+   "start": "2025-02-23",
+   "end": "2025-05-23",
+   "label": "CRASH",
+   "eth_return_pct": -14.506769825918763,
+   "eth_dd_pct": 46.56673114119923
+  },
+  {
+   "start": "2025-05-24",
+   "end": "2025-08-21",
+   "label": "BULL",
+   "eth_return_pct": 67.51412429378531,
+   "eth_dd_pct": 19.178794178794178
+  },
+  {
+   "start": "2025-08-22",
+   "end": "2025-11-19",
+   "label": "CRASH",
+   "eth_return_pct": -32.32292917166867,
+   "eth_dd_pct": 32.40407673860911
+  },
+  {
+   "start": "2025-11-20",
+   "end": "2026-02-17",
+   "label": "CRASH",
+   "eth_return_pct": -30.544426113598867,
+   "eth_dd_pct": 45.26123936816525
+  },
+  {
+   "start": "2026-02-18",
+   "end": "2026-05-18",
+   "label": "SIDEWAYS",
+   "eth_return_pct": 8.924879393521712,
+   "eth_dd_pct": 12.857555619763076
+  },
+  {
+   "start": "2026-05-19",
+   "end": "2026-08-16",
+   "label": "SIDEWAYS",
+   "eth_return_pct": -15.426208651399486,
+   "eth_dd_pct": 24.786864540574676
+  }
+ ],
+ "recent_2y": {
+  "label": "recent_2y",
+  "start": "2024-10-05",
+  "end": "2026-10-05",
+  "days": 731,
+  "total_return_pct": 17.6102,
+  "cagr_pct": 8.436205082027248,
+  "max_drawdown_pct": 42.284763822259784,
+  "profit_factor": 1.109468129838527,
+  "cycle_profit_factor": Infinity,
+  "positive_days_ratio": 0.19863013698630136,
+  "completed_cycles": 296,
+  "trades": 592,
+  "win_rate": 1.0,
+  "expectancy_per_cycle": 29.74695945945946,
+  "avg_cycle_profit": 29.74695945945946,
+  "avg_cycle_duration_h": 159.25938532282282,
+  "fees": 1486.21,
+  "fee_to_gross_ratio": 0.14441407362133685,
+  "realized": 8805.1,
+  "unrealized_end": 0.0,
+  "max_inventory_krw": 43628.849609212295,
+  "avg_inventory_krw": 15261.984515714295,
+  "longest_underwater_days": 234,
+  "min_cash_krw": 11176.38,
+  "cash_reserve_violations": 0,
+  "inventory_violations": 177,
+  "daily_trades_mean": 12.333333333333334,
+  "daily_trades_median": 8.0,
+  "best_day_krw": 3107.42,
+  "worst_day_krw": -4916.53,
+  "halted": true,
+  "halt_reason": "MDD 12.78%",
+  "recenters": 146,
+  "guard_days_off": 13,
+  "daily_pauses": 10,
+  "end_equity": 58805.1
+ },
+ "recent_6m": {
+  "label": "recent_6m",
+  "start": "2026-04-06",
+  "end": "2026-10-05",
+  "days": 183,
+  "total_return_pct": 9.516860000000005,
+  "cagr_pct": 19.879859114588292,
+  "max_drawdown_pct": 2.183442629835845,
+  "profit_factor": 3.5989962189688876,
+  "cycle_profit_factor": Infinity,
+  "positive_days_ratio": 0.17582417582417584,
+  "completed_cycles": 158,
+  "trades": 318,
+  "win_rate": 1.0,
+  "expectancy_per_cycle": 30.55018987341772,
+  "avg_cycle_profit": 30.55018987341772,
+  "avg_cycle_duration_h": 14.931962025316455,
+  "fees": 798.37,
+  "fee_to_gross_ratio": 0.14205113606035263,
+  "realized": 4826.93,
+  "unrealized_end": -68.5,
+  "max_inventory_krw": 39879.14015708619,
+  "avg_inventory_krw": 1412.9975882759306,
+  "longest_underwater_days": 2,
+  "min_cash_krw": 11119.54,
+  "cash_reserve_violations": 0,
+  "inventory_violations": 0,
+  "daily_trades_mean": 7.395348837209302,
+  "daily_trades_median": 6.0,
+  "best_day_krw": 1041.15,
+  "worst_day_krw": -453.21,
+  "halted": false,
+  "halt_reason": null,
+  "recenters": 12,
+  "guard_days_off": 1,
+  "daily_pauses": 0,
+  "end_equity": 54758.43
+ },
+ "cost_stress": {
+  "1.5x": {
+   "label": "cost_1.5x",
+   "start": "2017-09-30",
+   "end": "2026-10-05",
+   "days": 3291,
+   "total_return_pct": 44.85534,
+   "cagr_pct": 4.195511571361288,
+   "max_drawdown_pct": 27.359041187831,
+   "profit_factor": 2.316279536578969,
+   "cycle_profit_factor": Infinity,
+   "positive_days_ratio": 0.015805471124620062,
+   "completed_cycles": 871,
+   "trades": 1742,
+   "win_rate": 1.0,
+   "expectancy_per_cycle": 25.749334098737084,
+   "avg_cycle_profit": 25.749334098737084,
+   "avg_cycle_duration_h": 7.973982013011864,
+   "fees": 6552.33,
+   "fee_to_gross_ratio": 0.2260983436853002,
+   "realized": 22427.67,
+   "unrealized_end": 0.0,
+   "max_inventory_krw": 37878.211004934936,
+   "avg_inventory_krw": 427.6097214494881,
+   "longest_underwater_days": 12,
+   "min_cash_krw": 16757.35,
+   "cash_reserve_violations": 0,
+   "inventory_violations": 0,
+   "daily_trades_mean": 34.15686274509804,
+   "daily_trades_median": 23.0,
+   "best_day_krw": 4251.8,
+   "worst_day_krw": -8264.95,
+   "halted": true,
+   "halt_reason": "MDD 12.26%",
+   "recenters": 1201,
+   "guard_days_off": 59,
+   "daily_pauses": 4,
+   "end_equity": 72427.67
+  },
+  "2.0x": {
+   "label": "cost_2.0x",
+   "start": "2017-09-30",
+   "end": "2026-10-05",
+   "days": 3291,
+   "total_return_pct": 36.100500000000004,
+   "cagr_pct": 3.4775615423864314,
+   "max_drawdown_pct": 29.190348671178874,
+   "profit_factor": 2.009616395165528,
+   "cycle_profit_factor": Infinity,
+   "positive_days_ratio": 0.015805471124620062,
+   "completed_cycles": 871,
+   "trades": 1742,
+   "win_rate": 1.0,
+   "expectancy_per_cycle": 20.723593570608497,
+   "avg_cycle_profit": 20.723593570608497,
+   "avg_cycle_duration_h": 7.973982013011864,
+   "fees": 8738.77,
+   "fee_to_gross_ratio": 0.326207155020975,
+   "realized": 18050.25,
+   "unrealized_end": 0.0,
+   "max_inventory_krw": 37170.926396003175,
+   "avg_inventory_krw": 401.8642708229224,
+   "longest_underwater_days": 12,
+   "min_cash_krw": 15554.72,
+   "cash_reserve_violations": 0,
+   "inventory_violations": 0,
+   "daily_trades_mean": 34.15686274509804,
+   "daily_trades_median": 23.0,
+   "best_day_krw": 4233.1,
+   "worst_day_krw": -8272.9,
+   "halted": true,
+   "halt_reason": "MDD 13.14%",
+   "recenters": 1201,
+   "guard_days_off": 59,
+   "daily_pauses": 4,
+   "end_equity": 68050.25
+  }
+ },
+ "gate": {
+  "pass": false,
+  "checks": {
+   "total_return_gt_0": true,
+   "recent_2y_gt_0": true,
+   "recent_6m_gt_0": true,
+   "pf_ge_1.3": true,
+   "mdd_le_12": false,
+   "cost_2x_gt_0": true,
+   "fee_ratio_le_0.5": true,
+   "bear_crash_survived": false,
+   "max_inventory_within_policy": true,
+   "cash_reserve_violations_0": true
+  },
+  "failed": [
+   "mdd_le_12",
+   "bear_crash_survived"
+  ]
+ },
+ "elapsed_sec": 88.6
+}

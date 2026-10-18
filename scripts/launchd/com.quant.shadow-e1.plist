@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.quant.shadow-e1</string>
+  <!-- D0 v2 candidate E1 forward SHADOW: public WS ticker + read-only quant.db -> data/d0_v2_e1_forward.db.
+       No order path, no secrets (tests/unit/test_e1_forward.py). Independent of com.quant.trader. -->
+  <key>ProgramArguments</key>
+  <array><string>__BACKEND__/.venv/bin/python</string><string>-m</string><string>app.research.e1_forward.runner</string></array>
+  <key>WorkingDirectory</key><string>__BACKEND__</string>
+  <key>EnvironmentVariables</key><dict><key>PATH</key><string>/usr/bin:/bin:/usr/sbin:/sbin</string><key>PYTHONUNBUFFERED</key><string>1</string></dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>10</integer>
+  <key>ProcessType</key><string>Background</string>
+  <key>StandardOutPath</key><string>__ROOT__/logs/launchd_shadow_e1.out.log</string>
+  <key>StandardErrorPath</key><string>__ROOT__/logs/launchd_shadow_e1.err.log</string>
+</dict>
+</plist>

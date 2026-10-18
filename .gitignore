@@ -1,0 +1,26 @@
+
+__pycache__/
+!.env.example
+.DS_Store
+.env
+.env.*
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+*.db
+*.db-shm
+*.db-wal
+*.egg-info/
+*.parquet
+*.pyc
+# data / logs
+# macOS
+# node
+# python
+# secrets
+data/
+frontend/dist/
+logs/
+node_modules/
+reports/

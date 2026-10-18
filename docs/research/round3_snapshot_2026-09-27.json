@@ -1,0 +1,147 @@
+{
+  "taken_at_utc": "2026-09-26T15:19:31+00:00",
+  "taken_at_kst": "2026-09-27T00:10 KST",
+  "git_head": "9245f439f96e2658cedef85c093acc5565bb5bc6",
+  "git_tag": "paper-d-validation",
+  "git_uncommitted": [
+    "docs/00-architecture.md",
+    "docs/strategy-D-rules.md",
+    "scripts/launchd_install.sh",
+    "backend/app/monitoring/slippage.py",
+    "backend/tests/unit/test_slippage.py",
+    "docs/paper-d-24h-report.md",
+    "scripts/launchd/com.quant.watch.plist",
+    "scripts/trigger_watch.py",
+    "scripts/trigger_watch.sh"
+  ],
+  "d0": {
+    "strategy_version": "trend_following_4h_v1",
+    "parameter_hash": "c0e59de4f7b70c0c",
+    "epoch_started_at": "2026-09-25T14:09:28.717344+00:00",
+    "params": {
+      "entry_n": 30,
+      "trend_ema": 100,
+      "exit_n": 20,
+      "atr_period": 14,
+      "atr_stop_mult": 3.0,
+      "atr_trail_mult": 4.0,
+      "exit_on_trend_loss": 1,
+      "rsi_period": 14,
+      "volume_sma_period": 20,
+      "ema_fast": 20,
+      "ema_slow": 50
+    },
+    "timeframe": "4h",
+    "trend_timeframe": "1d",
+    "file_md5": {
+      "backend/app/strategy/trend_following.py": "f21c27e1a6c16f8f12cbb08f5642e33b",
+      "backend/app/backtest/engine.py": "ec0de420acaa73a1f33e24378e3f509f",
+      "backend/app/services/trader_service.py": "0c8d536b4cc6fe8a0fe8db44fbc5c0d6",
+      "config/strategies/trend_following_4h_v1.yaml": "72eed242066ed8dfbc863b2cc674be5d"
+    }
+  },
+  "bot": {
+    "state": "RUNNING",
+    "mode": "PAPER",
+    "pid": 64658,
+    "execution_mode": "ENTRY_AND_EXIT"
+  },
+  "approvals": {
+    "trend_following_4h_v1": {
+      "research_approved": true,
+      "paper_approved": false,
+      "live_approved": false
+    },
+    "live_gate.enabled": false,
+    "TRADING_MODE": "PAPER"
+  },
+  "d0_position": {
+    "btc": "0",
+    "krw": "100000",
+    "stop_price": null,
+    "paper_orders": 0,
+    "paper_trades": 0
+  },
+  "d0_last_decision": {
+    "market_bar_time": "2026-09-26T12:00:00+00:00",
+    "decision": "HOLD",
+    "reason": "INSIDE_CHANNEL",
+    "daily_close": 113657000.0,
+    "daily_ema": 103160288.84851788,
+    "close_4h": 114454000.0,
+    "donchian_upper": 117600000.0,
+    "donchian_lower": 113000000.0,
+    "atr": 994764.4475641554
+  },
+  "launchd": {
+    "com.quant.trader": {
+      "state": "running",
+      "pid": 64658
+    },
+    "com.quant.api": {
+      "state": "running",
+      "pid": 64582
+    },
+    "com.quant.watch": {
+      "state": "running",
+      "pid": 66729
+    },
+    "com.quant.shadow-round3": "not loaded"
+  },
+  "candles": {
+    "1m": {
+      "count": 1090871,
+      "first": "2024-08-28 02:08",
+      "last": "2026-09-26 15:09"
+    },
+    "1h": {
+      "count": 78791,
+      "first": "2017-09-25 03:00",
+      "last": "2026-09-26 14:00"
+    },
+    "4h": {
+      "count": 6,
+      "last": "2026-09-26 08:00"
+    },
+    "1d": {
+      "count": 1,
+      "last": "2026-09-25 00:00"
+    },
+    "15m": {
+      "count": 39,
+      "note": "legacy baseline rows"
+    }
+  },
+  "reference_artifacts_verified": {
+    "wf_oos (docs/research/round2_D.json)": {
+      "return_pct": 200.348,
+      "mdd_pct": 6.72,
+      "pf": 3.452,
+      "trades": 119,
+      "profitable_windows": "14/15",
+      "prompt_reference": "+200.35% / 6.72% / 3.45 / 119 / 14/15 -> MATCH"
+    },
+    "frozen_9y (backtest_runs.id=11, data/backtests/D_frozen_full_1h_9y_summary.json)": {
+      "return_pct": 129.52,
+      "mdd_pct": 11.28,
+      "pf": 3.746,
+      "trades": 116,
+      "range": "2017-09-25 03:00 -> 2026-09-25 14:00",
+      "prompt_reference": "+129.5% / 11.3% / 3.75 / 116 -> MATCH"
+    },
+    "recent_2y (backtest_runs.id=10, data/backtests/D_frozen_full_1h_summary.json)": {
+      "return_pct": 9.394,
+      "mdd_pct": 4.074,
+      "pf": 2.337,
+      "trades": 20,
+      "range": "2024-08-28 -> 2026-09-25",
+      "prompt_reference": "+9.4% / 4.1% / 2.34 -> MATCH"
+    }
+  },
+  "round3_existing": {
+    "config": false,
+    "research_db": false,
+    "launchd": false,
+    "mode_selected": "INITIALIZE"
+  }
+}

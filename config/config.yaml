@@ -1,0 +1,173 @@
+# ₩100K → ₩1M Bitcoin Quant Challenge — runtime configuration
+# Secrets (API keys, TRADING_MODE, LIVE_CONFIRM) live ONLY in .env — never here.
+# All timestamps stored in DB are UTC; daily boundaries use system.report_timezone.
+
+system:
+  market: KRW-BTC
+  report_timezone: Asia/Seoul
+  heartbeat_sec: 5
+  snapshot_interval_sec: 60
+  reconcile_interval_sec: 300
+  database_url: sqlite+aiosqlite:///../data/quant.db
+  candle_store_dir: ../data/candles
+  log_dir: ../logs
+  reports_dir: ../reports
+  log_level: INFO
+  warmup_days: 12               # 1m history primed into indicators at startup (1h EMA200 needs ~9d)
+  warmup_days_1h: 400           # 1h history replayed first for 4h/1d strategies (1d EMA100 + channels)
+  command_poll_sec: 2
+  command_ttl_sec: 120          # PAUSE/RESUME expire if not acknowledged within TTL
+  kill_command_ttl_sec: 600     # KILL is safety-critical: longer TTL so a slow trader still halts
+
+challenge:
+  initial_capital_krw: 100000       # challenge principal; external flows after start are flagged
+  goal_krw: 1000000
+  funding_tolerance_krw: 500        # exchange KRW must be within this of initial capital before start
+  start_date: null            # set on first LIVE start (YYYY-MM-DD, KST)
+
+market_data:
+  timeframes: ["1m", "5m", "15m", "1h"]
+  ws_ping_interval_sec: 30      # server closes after 120s idle
+  ws_backoff_initial_sec: 1.0
+  ws_backoff_max_sec: 60.0
+  history_years: 2
+
+strategy:
+  # Active strategy. `version_file` (config/strategies/<version>.yaml) is the frozen operating
+  # parameter set and, when set, overrides name/timeframe/params below. Never auto-changed.
+  version_file: strategies/trend_following_4h_v1.yaml   # PAPER promotion of D (2026-09-25); frozen, never auto-changed
+  name: trend_momentum
+  timeframe: 15m
+  trend_timeframe: 1h
+  params:
+    ema_fast: 12
+    ema_slow: 48
+    trend_ema: 200
+    cross_lookback: 3           # BUY allowed within N bars after golden cross
+    rsi_period: 14
+    rsi_buy_min: 50.0
+    rsi_buy_max: 70.0
+    atr_period: 14
+    atr_stop_mult: 2.0
+    atr_trail_mult: 3.0
+    volume_sma_period: 20
+    volume_min_ratio: 1.0
+
+risk:
+  # Mode-specific exposure. LIVE deliberately starts small; raise ONLY via config after
+  # stability is proven. Order size is never increased in response to losses.
+  by_mode:
+    LIVE:
+      max_position_pct: 0.30
+      max_order_krw: 30000
+      max_concurrent_positions: 1
+    PAPER:
+      max_position_pct: 0.30
+      max_order_krw: 30000
+      max_concurrent_positions: 1
+    BACKTEST:
+      max_position_pct: 0.30
+      max_order_krw: 30000
+      max_concurrent_positions: 1
+  min_order_krw: 5000           # verified at startup via GET /v1/orders/chance
+  fee_rate: 0.0005              # overwritten at startup via GET /v1/orders/chance
+  slippage_bps: 3               # backtest / paper fill model
+  daily_loss_limit_pct: 0.03
+  max_drawdown_limit_pct: 0.15
+  max_consecutive_losses: 4
+  cooldown_after_loss_min: 60
+  minimum_krw_balance: 1000
+  max_orders_per_hour: 4
+
+kill_switch:
+  api_error_consecutive: 5
+  market_data_stale_sec: 120
+  heartbeat_stale_sec: 30
+  reconcile_krw_tolerance: 100
+  reconcile_btc_tolerance: 0.00001
+  local_fault_grace_multiplier: 2   # stale * this while exchange is trading -> HALTED (unexplained)
+  db_write_error_limit: 3
+
+live_gate:
+  # LIVE promotion requirements — ALL must pass. Checked by app.config.live_guard.
+  enabled: false                # gate 2 of 3 (gate 1: TRADING_MODE=LIVE, gate 3: LIVE_CONFIRM). PUBLIC TEMPLATE: LIVE disabled
+  min_paper_hours: 48             # infrastructure runtime (any strategy)
+  min_paper_trades: 10            # recorded only — NOT a PASS condition (low-frequency strategies)
+  strategy_paper_min_hours: 24    # PAPER operational gate: active strategy runtime (was 72h)
+  max_paper_critical_errors: 0
+  require_reconcile_ok: true
+  require_order_test_ok: true
+  require_recent_backtest_days: 14
+  small_live_max_order_krw: 6000  # first-stage LIVE cap until manually lifted
+  # Strategy readiness is separate from infrastructure readiness. A strategy must be listed
+  # here (after backtest + walk-forward + paper review) or LIVE is blocked: STRATEGY_NOT_APPROVED.
+  backtest_min_profit_factor: 1.0
+  backtest_min_net_return_pct: 0.0
+  # Upbit API keys are IP-whitelisted to this machine's OUTBOUND PUBLIC IPv4 (never 100.x/LAN).
+  # Fill in after running scripts/check_public_ip.py; verified only after it stays stable.
+  static_public_ip: ""                 # YOUR outbound public IPv4 (Upbit key whitelist). Empty = LIVE blocked.
+  static_ip_min_observation_hours: 24
+  public_ip_check_interval_sec: 3600
+  order_test_krw: 6000            # /v1/orders/test amount (>= 5,000 minimum); never a real order
+  # Three separate approval states per strategy VERSION (see config/strategies/*.yaml):
+  #   research_approved  -> passed the walk-forward research harness
+  #   paper_approved     -> passed the PAPER execution-validation gate
+  #   live_approved      -> explicit human LIVE approval (the only flag live_guard reads)
+  # 'approved_strategies' (legacy list) is gone; nothing here grants LIVE by itself.
+  strategy_status:
+    trend_momentum_v1:       {research_approved: false, paper_approved: false, live_approved: false}
+    trend_following_4h_v1:   {research_approved: true,  paper_approved: true,  live_approved: false}  # set live_approved only after YOUR own review
+    trend_following_1d_v1:   {research_approved: false, paper_approved: false, live_approved: false}
+
+portfolio:
+  # Logical capital sleeves inside the single Upbit KRW wallet (ledger/reservation isolation).
+  # Effective for the trader on its next (re)start; the currently open BTC position is never reduced
+  # (grandfathered) — only the next D0 entry is sized from the ₩50,000 sleeve (30% -> ₩15,000).
+  enabled: true
+  sleeves:
+    BTC_D0:
+      asset: BTC
+      allocated_capital: 50000
+      strategy_version: trend_following_4h_v1
+      mode: LIVE
+    ETH_GRID:
+      asset: ETH
+      allocated_capital: 50000
+      strategy_version: eth_grid_v1
+      # LIVE_EXPERIMENT (user-approved 2026-10-05 KST): ₩50,000 real-money experiment with the
+      # historical G0 candidate (fixed 0.75% gap). The research gate FAILED (MDD 25.7% > 12%,
+      # bear-market inventory loss) — this is NOT a validated strategy deployment. The trader
+      # carves ₩50,000 out of the D0 book into this sleeve once (bot_state.sleeve_transfers).
+      mode: PLANNED           # PUBLIC TEMPLATE: ETH sleeve not live (set LIVE_EXPERIMENT only with your own approval)
+
+eth_grid:
+  # Process: app.main_eth_grid (launchd com.quant.eth-grid). Strategy params = research G0 (frozen).
+  candidate: G0
+  market: KRW-ETH
+  database_url: sqlite+aiosqlite:///../data/eth_grid_live.db   # own orders/fills/state/events
+  eth_market_db: ../data/eth_market.db                          # read-only daily EMA100 warm-up
+  heartbeat_sec: 5
+  reconcile_interval_sec: 300
+  trend_refresh_sec: 3600
+  market_data_stale_sec: 120
+  max_orders_per_hour: 30        # runaway guard only (never a tuning knob)
+  max_orders_per_day: 60
+  api_error_consecutive: 5
+  db_write_error_limit: 3
+  reconcile_fail_limit: 2
+  compounding:
+    # Realized-profit compounding (user-approved 2026-10-05): order unit = 10 % of
+    # (₩50,000 + net realized PnL), floored to ₩1,000, +25 % per update max, hard cap ₩20,000.
+    # Unrealized PnL never counts; losses shrink the unit immediately; open lots keep their unit;
+    # inventory 80 % / cash 20 % ratios scale with the conservative capital base. No rebalance.
+    enabled: true
+    round_krw: 1000
+    max_step_up_pct: 0.25
+    max_single_grid_order_krw: 20000
+    auto_rebalance: false
+  # LIVE strategy change approved by the user 2026-10-05 ~11:10 KST: NEW buys use AGGRESSIVE V2
+  # (fixed 0.50 % gap, sell target = actual fill x 1.005 tick-rounded); the 4 existing G0 0.75 %
+  # seed lots stay EXIT_ONLY with their original targets. Budget/unit/compounding/risk unchanged.
+  strategy_epoch: AGGRESSIVE_V2_050
+  active_gap_pct: 0.005
+  legacy_epoch_label: LEGACY_G0_075
